@@ -123,10 +123,10 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 <!-- HERO -->
 <div class="hero">
   <div class="ltog">
-    <button class="lbtn active" onclick="setLang('it')">IT</button>
-    <button class="lbtn" onclick="setLang('en')">EN</button>
-    <button class="lbtn" onclick="setLang('fr')">FR</button>
-    <button class="lbtn" onclick="setLang('de')">DE</button>
+    <button class="lbtn active" data-lang="it">IT</button>
+    <button class="lbtn" data-lang="en">EN</button>
+    <button class="lbtn" data-lang="fr">FR</button>
+    <button class="lbtn" data-lang="de">DE</button>
   </div>
   <div class="hero-eyebrow" data-t="hero_eyebrow"></div>
   <div class="hero-title">Casa<br><em>Adele</em></div>
@@ -142,16 +142,16 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 <!-- NAV -->
 <nav class="nav" id="mainNav">
   <div class="nav-row">
-    <button class="nbtn active" onclick="go('benvenuto',this)"><span class="ni">🏠</span><span class="nl" data-t="nav_welcome"></span></button>
-    <button class="nbtn" onclick="go('casa',this)"><span class="ni">🛏</span><span class="nl" data-t="nav_house"></span></button>
-    <button class="nbtn" onclick="go('spiagge',this)"><span class="ni">🌊</span><span class="nl" data-t="nav_beaches"></span></button>
-    <button class="nbtn" onclick="go('servizi',this)"><span class="ni">✨</span><span class="nl" data-t="nav_amenities"></span></button>
+    <button class="nbtn active" data-section="benvenuto"><span class="ni">🏠</span><span class="nl" data-t="nav_welcome"></span></button>
+    <button class="nbtn" data-section="casa"><span class="ni">🛏</span><span class="nl" data-t="nav_house"></span></button>
+    <button class="nbtn" data-section="spiagge"><span class="ni">🌊</span><span class="nl" data-t="nav_beaches"></span></button>
+    <button class="nbtn" data-section="servizi"><span class="ni">✨</span><span class="nl" data-t="nav_amenities"></span></button>
   </div>
   <div class="nav-row">
-    <button class="nbtn" onclick="go('zona',this)"><span class="ni">🍽</span><span class="nl" data-t="nav_area"></span></button>
-    <button class="nbtn" onclick="go('regole',this)"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
-    <button class="nbtn" onclick="go('dintorni',this)"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
-    <button class="nbtn" onclick="go('contatti',this)"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
+    <button class="nbtn" data-section="zona"><span class="ni">🍽</span><span class="nl" data-t="nav_area"></span></button>
+    <button class="nbtn" data-section="regole"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
+    <button class="nbtn" data-section="dintorni"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
+    <button class="nbtn" data-section="contatti"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
   </div>
 </nav>
 
@@ -650,15 +650,13 @@ let cur = 'benvenuto';
 function setLang(l) {
   lang = l;
   const d = T[l];
-  // update all data-t elements
   document.querySelectorAll('[data-t]').forEach(el => {
     const key = el.getAttribute('data-t');
     if (d[key] !== undefined) el.innerHTML = d[key];
   });
-  // update lang buttons
-  document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('active'));
-  document.querySelector('.lbtn[onclick="setLang(\''+l+'\')"]').classList.add('active');
-  // update WhatsApp links
+  document.querySelectorAll('.lbtn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === l);
+  });
   const waDaniela = document.getElementById('wa-daniela');
   const waEgidio = document.getElementById('wa-egidio');
   if (waDaniela) waDaniela.href = 'https://wa.me/393466225194?text=' + d.wa_msg_daniela;
@@ -667,7 +665,7 @@ function setLang(l) {
   syncNav(cur);
 }
 
-function go(id, btn) {
+function go(id) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   cur = id;
@@ -677,12 +675,20 @@ function go(id, btn) {
 
 function syncNav(id) {
   document.querySelectorAll('.nbtn').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('onclick') === "go('"+id+"',this)");
+    b.classList.toggle('active', b.getAttribute('data-section') === id);
   });
 }
 
-// Init
-setLang('it');
+// Init — wire up all buttons via addEventListener
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nbtn').forEach(b => {
+    b.addEventListener('click', function() { go(this.getAttribute('data-section')); });
+  });
+  document.querySelectorAll('.lbtn').forEach(b => {
+    b.addEventListener('click', function() { setLang(this.getAttribute('data-lang')); });
+  });
+  setLang('it');
+});
 </script>
 </body>
 </html>
