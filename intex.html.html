@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Casa Adele Porto Luna · Villasimius</title>
+<meta name="description" content="Guida ospiti Casa Adele Porto Luna — Villasimius, Sardegna."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--sand:#f2ede6;--warm:#faf8f5;--terra:#c47a45;--sea:#3a7ca5;--dark:#2b2420;--mid:#6b5f58;--soft:#b8a99a;--green:#5a7a5a;--r:14px;--sh:0 4px 20px rgba(43,36,32,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden}
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:560px;background:linear-gradient(160deg,#1a3a4f 0%,#2d6a8a 35%,#4a9ab8 60%,#c8a882 85%,#e8d5b8 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 48px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(90,154,191,.3) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(196,122,69,.2) 0%,transparent 50%)}
+.hero-eyebrow{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;position:relative;z-index:2}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,12vw,72px);font-weight:300;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:6px}
+.hero-title em{font-style:italic;color:rgba(255,255,255,.85)}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.7);margin-bottom:28px;position:relative;z-index:2}
+.chips{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2}
+.chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#fff;font-size:12px;padding:6px 14px;border-radius:20px}
+
+/* LANG TOGGLE */
+.ltog{position:absolute;top:24px;right:24px;display:flex;gap:5px;z-index:10}
+.lbtn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;padding:5px 10px;border-radius:16px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px)}
+.lbtn.active{background:rgba(255,255,255,.92);color:var(--dark)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,169,154,.3);padding:10px 12px 11px}
+.nav-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.nav-row+.nav-row{margin-top:6px}
+.nbtn{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--sand);border:1.5px solid transparent;border-radius:11px;padding:8px 3px 6px;cursor:pointer;transition:all .18s;font-family:'Jost',sans-serif;-webkit-tap-highlight-color:transparent}
+.nbtn.active{background:var(--terra);border-color:var(--terra)}
+.ni{font-size:21px;line-height:1}
+.nl{font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--mid);white-space:nowrap}
+.nbtn.active .nl{color:#fff}
+
+/* SECTIONS */
+.sec{display:none;padding:24px 16px 80px;max-width:680px;margin:0 auto;animation:fu .3s ease}
+.sec.active{display:block}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.ey{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:7px}
+.st{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:18px}
+.st em{font-style:italic}
+.intr{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:300;line-height:1.7;color:var(--mid);margin-bottom:18px}
+.bod{font-size:14px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:12px}
+.div{width:34px;height:1px;background:var(--terra);opacity:.5;margin:13px 0}
+
+/* CARD */
+.card{background:#fff;border-radius:var(--r);padding:15px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
+.ci{font-size:21px;margin-bottom:7px}
+.ct{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;margin-bottom:4px;color:var(--dark)}
+.cb{font-size:13px;font-weight:300;line-height:1.65;color:var(--mid)}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
+.g2 .card{margin-bottom:0}
+
+/* HIGHLIGHT */
+.hl{background:linear-gradient(135deg,#fdf3e8,#f9ead6);border-radius:var(--r);padding:15px;margin-bottom:10px;border-left:3px solid var(--terra)}
+.hlt{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--terra);margin-bottom:5px}
+.hlb{font-size:13px;font-weight:300;line-height:1.65;color:#7a5c3a}
+
+/* BEACH */
+.bc{background:linear-gradient(135deg,#e8f4f9,#d0e9f4);border-radius:var(--r);padding:13px;margin-bottom:8px;border:1px solid rgba(90,154,191,.2)}
+.bch{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.bcn{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--sea)}
+.bcd{font-size:11px;font-weight:500;background:var(--sea);color:#fff;padding:3px 9px;border-radius:20px}
+.bcb{font-size:13px;font-weight:300;color:#3a5a72;line-height:1.5}
+
+/* PLACE */
+.pc{background:#fff;border-radius:var(--r);padding:13px;margin-bottom:8px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2);display:flex;gap:11px}
+.pe{font-size:26px;flex-shrink:0;margin-top:1px}
+.pi{flex:1}
+.pn{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--dark);margin-bottom:3px}
+.pt{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.06em;padding:2px 7px;border-radius:7px;margin-bottom:3px}
+.tr{background:#fdf0e8;color:var(--terra)}
+.tb{background:#e8f4f9;color:var(--sea)}
+.tc{background:#1a1a2e;color:#c4a0ff}
+.ts{background:#edf4ed;color:var(--green)}
+.pd{font-size:12px;font-weight:300;color:var(--mid);line-height:1.5}
+.pa{font-size:11px;color:var(--soft);margin-top:3px}
+
+/* SUB */
+.sub{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--dark);margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+.sub::after{content:'';flex:1;height:1px;background:rgba(184,169,154,.4)}
+
+/* AMENITY */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ai{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:300;color:var(--mid);padding:8px 10px;background:var(--sand);border-radius:8px}
+.ai span:first-child{font-size:14px}
+
+/* ECO */
+.eco{background:linear-gradient(135deg,#edf4ed,#ddeedd);border-radius:var(--r);padding:13px;margin-top:10px;border-left:3px solid var(--green)}
+.ecot{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--green);margin-bottom:7px}
+.ecoi{display:flex;flex-direction:column;gap:5px}
+.ecor{font-size:12px;font-weight:300;color:#3a5a3a;display:flex;gap:7px}
+
+/* RULES */
+.ri{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)}
+.ri:last-child{border-bottom:none}
+.riic{font-size:17px;flex-shrink:0}
+.rit{font-size:13px;font-weight:300;line-height:1.5;color:var(--mid)}
+.rit strong{display:block;font-weight:500;color:var(--dark);margin-bottom:1px}
+
+/* INFO ROW */
+.ir{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid rgba(184,169,154,.2)}
+.ir:last-child{border-bottom:none}
+.iric{font-size:17px;flex-shrink:0;width:22px}
+.irl{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:2px}
+.irv{font-size:14px;font-weight:300;color:var(--dark);line-height:1.5}
+
+/* CTA */
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:50px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:none;text-decoration:none;transition:all .2s;margin-bottom:9px}
+.ctawa{background:#25D366;color:#fff}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="ltog">
+    <button class="lbtn active" onclick="setLang('it')">IT</button>
+    <button class="lbtn" onclick="setLang('en')">EN</button>
+    <button class="lbtn" onclick="setLang('fr')">FR</button>
+    <button class="lbtn" onclick="setLang('de')">DE</button>
+  </div>
+  <div class="hero-eyebrow" data-t="hero_eyebrow"></div>
+  <div class="hero-title">Casa<br><em>Adele</em></div>
+  <div class="hero-sub">Porto Luna · Sardegna</div>
+  <div class="chips">
+    <span class="chip">🌊 <span data-t="chip_sea"></span></span>
+    <span class="chip">🌿 <span data-t="chip_garden"></span></span>
+    <span class="chip">🔥 BBQ</span>
+    <span class="chip">👨‍👩‍👧‍👦 <span data-t="chip_guests"></span></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-row">
+    <button class="nbtn active" onclick="go('benvenuto',this)"><span class="ni">🏠</span><span class="nl" data-t="nav_welcome"></span></button>
+    <button class="nbtn" onclick="go('casa',this)"><span class="ni">🛏</span><span class="nl" data-t="nav_house"></span></button>
+    <button class="nbtn" onclick="go('spiagge',this)"><span class="ni">🌊</span><span class="nl" data-t="nav_beaches"></span></button>
+    <button class="nbtn" onclick="go('servizi',this)"><span class="ni">✨</span><span class="nl" data-t="nav_amenities"></span></button>
+  </div>
+  <div class="nav-row">
+    <button class="nbtn" onclick="go('zona',this)"><span class="ni">🍽</span><span class="nl" data-t="nav_area"></span></button>
+    <button class="nbtn" onclick="go('regole',this)"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
+    <button class="nbtn" onclick="go('dintorni',this)"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
+    <button class="nbtn" onclick="go('contatti',this)"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
+  </div>
+</nav>
+
+<!-- ═══ BENVENUTO ═══ -->
+<section id="benvenuto" class="sec active">
+  <div class="ey" data-t="welcome_ey"></div>
+  <div class="st" data-t="welcome_title"></div>
+  <p class="intr" data-t="welcome_intro"></p>
+  <p class="bod" data-t="welcome_body"></p>
+  <div class="div"></div>
+  <div class="g2">
+    <div class="card"><div class="ci">🛏</div><div class="ct" data-t="w_c1t"></div><div class="cb" data-t="w_c1b"></div></div>
+    <div class="card"><div class="ci">📐</div><div class="ct">60 m²</div><div class="cb" data-t="w_c2b"></div></div>
+    <div class="card"><div class="ci">🌊</div><div class="ct">250 m</div><div class="cb" data-t="w_c3b"></div></div>
+    <div class="card"><div class="ci">👨‍👩‍👧</div><div class="ct" data-t="w_c4t"></div><div class="cb" data-t="w_c4b"></div></div>
+  </div>
+  <div class="hl"><div class="hlt" data-t="w_loc_t"></div><div class="hlb" data-t="w_loc_b"></div></div>
+</section>
+
+<!-- ═══ LA CASA ═══ -->
+<section id="casa" class="sec">
+  <div class="ey" data-t="house_ey"></div>
+  <div class="st" data-t="house_title"></div>
+  <div class="card"><div class="ci">🪴</div><div class="ct" data-t="h_c1t"></div><div class="cb" data-t="h_c1b"></div></div>
+  <div class="card"><div class="ci">🛏</div><div class="ct" data-t="h_c2t"></div><div class="cb" data-t="h_c2b"></div></div>
+  <div class="card"><div class="ci">🌙</div><div class="ct" data-t="h_c3t"></div><div class="cb" data-t="h_c3b"></div></div>
+  <div class="card"><div class="ci">🌿</div><div class="ct" data-t="h_c4t"></div><div class="cb" data-t="h_c4b"></div></div>
+  <div class="card"><div class="ci">🚿</div><div class="ct" data-t="h_c5t"></div><div class="cb" data-t="h_c5b"></div></div>
+</section>
+
+<!-- ═══ SPIAGGE ═══ -->
+<section id="spiagge" class="sec">
+  <div class="ey" data-t="beach_ey"></div>
+  <div class="st" data-t="beach_title"></div>
+  <p class="bod" data-t="beach_body"></p>
+  <div class="bc"><div class="bch"><div class="bcn">Porto Luna</div><div class="bcd">250 m</div></div><div class="bcb" data-t="b_pl"></div></div>
+  <div class="bc"><div class="bch"><div class="bcn">Is Traias</div><div class="bcd">250 m</div></div><div class="bcb" data-t="b_it"></div></div>
+  <div class="bc"><div class="bch"><div class="bcn" data-t="b_vs_name"></div><div class="bcd">450 m</div></div><div class="bcb" data-t="b_vs"></div></div>
+  <div class="bc"><div class="bch"><div class="bcn">Porto Giunco</div><div class="bcd">1,7 km</div></div><div class="bcb" data-t="b_pg"></div></div>
+  <div class="bc"><div class="bch"><div class="bcn">Punta Molentis</div><div class="bcd">1,7 km</div></div><div class="bcb" data-t="b_pm"></div></div>
+  <div class="hl" style="margin-top:13px"><div class="hlt" data-t="b_act_t"></div><div class="hlb" data-t="b_act_b"></div></div>
+</section>
+
+<!-- ═══ SERVIZI ═══ -->
+<section id="servizi" class="sec">
+  <div class="ey" data-t="am_ey"></div>
+  <div class="st" data-t="am_title"></div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:9px" data-t="am_kitchen"></div>
+    <div class="ag">
+      <div class="ai"><span>🔥</span><span data-t="am_hob"></span></div>
+      <div class="ai"><span>🫙</span><span data-t="am_oven"></span></div>
+      <div class="ai"><span>📡</span><span data-t="am_micro"></span></div>
+      <div class="ai"><span>☕</span><span data-t="am_coffee"></span></div>
+      <div class="ai"><span>🧊</span><span data-t="am_fridge"></span></div>
+      <div class="ai"><span>🍽</span><span data-t="am_dishes"></span></div>
+      <div class="ai"><span>🧇</span><span data-t="am_grill_pan"></span></div>
+      <div class="ai"><span>🪣</span><span data-t="am_cloths"></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:9px" data-t="am_living"></div>
+    <div class="ag">
+      <div class="ai"><span>❄️</span><span data-t="am_ac"></span></div>
+      <div class="ai"><span>📶</span><span>WiFi</span></div>
+      <div class="ai"><span>📺</span><span>TV</span></div>
+      <div class="ai"><span>🧺</span><span data-t="am_washer"></span></div>
+      <div class="ai"><span>👔</span><span data-t="am_iron"></span></div>
+      <div class="ai"><span>🛏</span><span data-t="am_linen"></span></div>
+      <div class="ai"><span>🛁</span><span data-t="am_towels"></span></div>
+      <div class="ai"><span>💇</span><span data-t="am_dryer"></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct" style="margin-bottom:9px" data-t="am_outdoor"></div>
+    <div class="ag">
+      <div class="ai"><span>🌱</span><span data-t="am_garden"></span></div>
+      <div class="ai"><span>🔥</span><span data-t="am_bbq"></span></div>
+      <div class="ai"><span>🪑</span><span data-t="am_furniture"></span></div>
+      <div class="ai"><span>🚗</span><span data-t="am_parking"></span></div>
+      <div class="ai"><span>🔒</span><span data-t="am_entrance"></span></div>
+      <div class="ai"><span>🏡</span><span data-t="am_fenced"></span></div>
+      <div class="ai"><span>🧯</span><span data-t="am_extinguisher"></span></div>
+      <div class="ai"><span>🩹</span><span data-t="am_firstaid"></span></div>
+    </div>
+  </div>
+  <div class="eco">
+    <div class="ecot" data-t="eco_t"></div>
+    <div class="ecoi">
+      <div class="ecor"><span>♨️</span><span data-t="eco_1"></span></div>
+      <div class="ecor"><span>💡</span><span data-t="eco_2"></span></div>
+      <div class="ecor"><span>♻️</span><span data-t="eco_3"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ZONA ═══ -->
+<section id="zona" class="sec">
+  <div class="ey" data-t="zona_ey"></div>
+  <div class="st" data-t="zona_title"></div>
+
+  <div class="sub" data-t="zona_rest"></div>
+  <div class="pc"><div class="pe">🦞</div><div class="pi"><div class="pn">Sa Tankitta</div><span class="pt tr" data-t="tag_seafood"></span><div class="pd" data-t="z_satankitta"></div><div class="pa">📍 Via Roma · Villasimius</div></div></div>
+  <div class="pc"><div class="pe">⛵</div><div class="pi"><div class="pn">Ristorante La Vela</div><span class="pt tr" data-t="tag_seafood_pizza"></span><div class="pd" data-t="z_lavela"></div><div class="pa">📍 Via degli Oleandri 12 · ☎ 392 8780232</div></div></div>
+  <div class="pc"><div class="pe">🌟</div><div class="pi"><div class="pn">Sobat Fine Dining</div><span class="pt tr" data-t="tag_finedining"></span><div class="pd" data-t="z_sobat"></div><div class="pa">📍 Centro Villasimius</div></div></div>
+  <div class="pc"><div class="pe">🌊</div><div class="pi"><div class="pn">Il Ragno Blu</div><span class="pt tr" data-t="tag_seafood2"></span><div class="pd" data-t="z_ragnoblu"></div><div class="pa">📍 Zona Porto Giunco</div></div></div>
+  <div class="pc"><div class="pe">🍕</div><div class="pi"><div class="pn">La Lanterna</div><span class="pt tr" data-t="tag_sardinian_pizza"></span><div class="pd" data-t="z_lanterna"></div><div class="pa">📍 Via Roma 64 · ☎ 070 790013</div></div></div>
+  <div class="pc"><div class="pe">🥩</div><div class="pi"><div class="pn">B-Steak Braceria</div><span class="pt tr" data-t="tag_meat"></span><div class="pd" data-t="z_bsteak"></div><div class="pa">📍 Via del Mare 62 · ☎ 339 6194547</div></div></div>
+  <div class="pc"><div class="pe">🌾</div><div class="pi"><div class="pn">Agriturismo Sa Bingia</div><span class="pt tr" data-t="tag_sardinian"></span><div class="pd" data-t="z_sabingia"></div><div class="pa">📍 Viale dei Carrubi 5 · ☎ 070 791332</div></div></div>
+
+  <div class="sub" data-t="zona_night"></div>
+  <div class="pc"><div class="pe">🍷</div><div class="pi"><div class="pn">Baccusardus Wine Bar</div><span class="pt tb" data-t="tag_winebar"></span><div class="pd" data-t="z_baccus"></div><div class="pa">📍 Via del Mare 65 · ☎ 347 6214778</div></div></div>
+  <div class="pc"><div class="pe">🧉</div><div class="pi"><div class="pn">El Peyote</div><span class="pt tb" data-t="tag_cocktail"></span><div class="pd" data-t="z_peyote"></div><div class="pa">📍 Centro Villasimius</div></div></div>
+  <div class="pc"><div class="pe">🎵</div><div class="pi"><div class="pn">Sciabecco Summer Club</div><span class="pt tc" data-t="tag_club"></span><div class="pd" data-t="z_sciabecco"></div><div class="pa">📍 Via Cagliari 21/A · ☎ 070 791512</div></div></div>
+  <div class="pc"><div class="pe">🌙</div><div class="pi"><div class="pn">Sky Beach Sardegna</div><span class="pt tc" data-t="tag_club2"></span><div class="pd" data-t="z_skybeach"></div><div class="pa">📍 Via Cagliari 17 · Loc. Santa Maria</div></div></div>
+  <div class="pc"><div class="pe">🌴</div><div class="pi"><div class="pn">Lagoon Club</div><span class="pt tc" data-t="tag_club3"></span><div class="pd" data-t="z_lagoon"></div><div class="pa">📍 <span data-t="z_lagoon_addr"></span></div></div></div>
+  <div class="hl"><div class="hlt" data-t="z_viadelmare_t"></div><div class="hlb" data-t="z_viadelmare_b"></div></div>
+
+  <div class="sub" data-t="zona_super"></div>
+  <div class="pc"><div class="pe">🟢</div><div class="pi"><div class="pn">Eurospin</div><span class="pt ts" data-t="tag_discount"></span><div class="pd" data-t="z_eurospin"></div><div class="pa">📍 Via Carducci / Via Su Pranu · ☎ 070 790427</div></div></div>
+  <div class="pc"><div class="pe">🔴</div><div class="pi"><div class="pn">Conad City</div><span class="pt ts" data-t="tag_supermarket"></span><div class="pd" data-t="z_conad"></div><div class="pa">📍 Via Raffaello · ☎ 070 7928024</div></div></div>
+  <div class="pc"><div class="pe">🏪</div><div class="pi"><div class="pn">Dacla Supermercati</div><span class="pt ts" data-t="tag_supermarket"></span><div class="pd" data-t="z_dacla"></div><div class="pa">📍 Via Pascoli · Villasimius</div></div></div>
+</section>
+
+<!-- ═══ REGOLE ═══ -->
+<section id="regole" class="sec">
+  <div class="ey" data-t="rules_ey"></div>
+  <div class="st" data-t="rules_title"></div>
+  <div class="card">
+    <div class="ri"><div class="riic">🕐</div><div class="rit"><strong data-t="r1t"></strong><span data-t="r1b"></span></div></div>
+    <div class="ri"><div class="riic">🚭</div><div class="rit"><strong data-t="r2t"></strong><span data-t="r2b"></span></div></div>
+    <div class="ri"><div class="riic">🐾</div><div class="rit"><strong data-t="r3t"></strong><span data-t="r3b"></span></div></div>
+    <div class="ri"><div class="riic">🔇</div><div class="rit"><strong data-t="r4t"></strong><span data-t="r4b"></span></div></div>
+    <div class="ri"><div class="riic">👥</div><div class="rit"><strong data-t="r5t"></strong><span data-t="r5b"></span></div></div>
+    <div class="ri"><div class="riic">♻️</div><div class="rit"><strong data-t="r6t"></strong><span data-t="r6b"></span></div></div>
+    <div class="ri"><div class="riic">🏠</div><div class="rit"><strong data-t="r7t"></strong><span data-t="r7b"></span></div></div>
+  </div>
+  <div class="hl"><div class="hlt" data-t="r_cancel_t"></div><div class="hlb" data-t="r_cancel_b"></div></div>
+</section>
+
+<!-- ═══ DINTORNI ═══ -->
+<section id="dintorni" class="sec">
+  <div class="ey" data-t="around_ey"></div>
+  <div class="st" data-t="around_title"></div>
+  <div class="card"><div class="ci">🦩</div><div class="ct" data-t="ar_c1t"></div><div class="cb" data-t="ar_c1b"></div></div>
+  <div class="card"><div class="ci">⛵</div><div class="ct" data-t="ar_c2t"></div><div class="cb" data-t="ar_c2b"></div></div>
+  <div class="card"><div class="ci">🏛</div><div class="ct" data-t="ar_c3t"></div><div class="cb" data-t="ar_c3b"></div></div>
+  <div class="card"><div class="ci">🛍</div><div class="ct" data-t="ar_c4t"></div><div class="cb" data-t="ar_c4b"></div></div>
+  <div class="card"><div class="ci">🧁</div><div class="ct" data-t="ar_c5t"></div><div class="cb" data-t="ar_c5b"></div></div>
+</section>
+
+<!-- ═══ CONTATTI ═══ -->
+<section id="contatti" class="sec">
+  <div class="ey" data-t="contact_ey"></div>
+  <div class="st" data-t="contact_title"></div>
+  <p class="bod" data-t="contact_body"></p>
+  <div class="card">
+    <div class="ir"><div class="iric">👩</div><div><div class="irl" data-t="c_daniela_l"></div><div class="irv">+39 346 622 5194</div></div></div>
+    <div class="ir"><div class="iric">👨</div><div><div class="irl" data-t="c_egidio_l"></div><div class="irv">+39 340 837 9789</div></div></div>
+    <div class="ir"><div class="iric">📍</div><div><div class="irl" data-t="c_addr_l"></div><div class="irv">Porto Luna, Punta Molentis<br>Villasimius (CA), Sardegna</div></div></div>
+    <div class="ir"><div class="iric">🔑</div><div><div class="irl">CIN</div><div class="irv">IT111105C2000U1092</div></div></div>
+  </div>
+  <a class="cta ctawa" id="wa-daniela" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Daniela</a>
+  <a class="cta ctawa" id="wa-egidio" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Egidio</a>
+  <div class="hl" style="margin-top:12px"><div class="hlt" data-t="c_sos_t"></div><div class="hlb" data-t="c_sos_b"></div></div>
+</section>
+
+<script>
+const T = {
+  it:{
+    hero_eyebrow:"Guida ospiti · Villasimius",
+    chip_sea:"Vista mare", chip_garden:"Giardino privato", chip_guests:"4 ospiti",
+    nav_welcome:"Benvenuto", nav_house:"La casa", nav_beaches:"Spiagge", nav_amenities:"Servizi",
+    nav_area:"Zona", nav_rules:"Regole", nav_around:"Dintorni", nav_contact:"Contatti",
+    // BENVENUTO
+    welcome_ey:"Benvenuto",
+    welcome_title:"Sei arrivato in <em>paradiso</em>",
+    welcome_intro:'"Benvenuto a Casa Adele — la tua casa sul mare a Villasimius."',
+    welcome_body:"Casa Adele è un'accogliente villetta a schiera nella tranquilla zona di Porto Luna, a pochi passi dalle acque cristalline della spiaggia di Is Traias. Perfetta per famiglie e coppie che cercano relax autentico e riservatezza.",
+    w_c1t:"2 camere", w_c1b:"Matrimoniale + cameretta con letto a castello",
+    w_c2b:"Due livelli, vista mare",
+    w_c3b:"A piedi da Porto Luna e Is Traias",
+    w_c4t:"4 ospiti", w_c4b:"Ideale per famiglie o due coppie",
+    w_loc_t:"📍 Dove siamo", w_loc_b:"Porto Luna, zona Punta Molentis — Villasimius (CA), Sardegna Sud-Est. A 1,8 km dal centro con tutti i servizi, bar e ristoranti.",
+    // LA CASA
+    house_ey:"La casa", house_title:"Spazi e <em>comfort</em>",
+    h_c1t:"Piano terra — Soggiorno & Cucina", h_c1b:"Ampio soggiorno luminoso con splendida vista mare su Is Traias. Cucina completamente attrezzata: piano cottura, forno, microonde, frigo con freezer e macchina del caffè.",
+    h_c2t:"Piano terra — Cameretta", h_c2b:"Letto a castello per 2 persone, ideale per bambini o ragazzi.",
+    h_c3t:"Piano superiore — Camera matrimoniale", h_c3b:"Letto alla francese in un ambiente intimo e confortevole.",
+    h_c4t:"Esterno — Giardino & BBQ", h_c4b:"Giardino privato recintato con barbecue e mobili da giardino. Perfetto per cene al tramonto.",
+    h_c5t:"Bagno", h_c5b:"Doccia, lavello, asciugacapelli, asciugamani e prodotti igiene.",
+    // SPIAGGE
+    beach_ey:"Spiagge", beach_title:"Il mare di <em>Villasimius</em>",
+    beach_body:"Sei nel cuore del Parco Naturale Regionale di Villasimius, tra le acque più trasparenti del Mediterraneo.",
+    b_pl:"La spiaggia sotto casa. Sabbia chiara, acque calme — perfetta per famiglie con bambini.",
+    b_it:"Visibile dalla finestra del soggiorno. Acque azzurre e fondale basso, uno dei lidi più amati della zona.",
+    b_vs_name:"Spiaggia di Villasimius", b_vs:"La spiaggia principale del paese, attrezzata e vivace, con bar e servizi.",
+    b_pg:"Una delle più fotografate di tutta la Sardegna. Laguna di Notteri sul retro — fenicotteri rosa inclusi!",
+    b_pm:"Spiaggia esclusiva (accesso a pagamento). Acque cristalline e paesaggio selvaggio — da non perdere.",
+    b_act_t:"🤿 Attività in zona", b_act_b:"Immersioni · Kitesurf · Windsurf · Surf · Barca a vela · Sport acquatici · Bicicletta · Trekking costiero",
+    // SERVIZI
+    am_ey:"Dotazioni", am_title:"Tutto quello che <em>ti serve</em>",
+    am_kitchen:"🍳 Cucina", am_hob:"Piano cottura", am_oven:"Forno", am_micro:"Microonde", am_coffee:"Macchina caffè", am_fridge:"Frigo+freezer", am_dishes:"Stoviglie", am_grill_pan:"Piastra", am_cloths:"Canovacci",
+    am_living:"🛋 Living & comfort", am_ac:"Aria condizionata", am_washer:"Lavatrice", am_iron:"Ferro da stiro", am_linen:"Lenzuola", am_towels:"Asciugamani", am_dryer:"Asciugacapelli",
+    am_outdoor:"🌿 Esterno & sicurezza", am_garden:"Giardino privato", am_bbq:"BBQ / Grill", am_furniture:"Mobili esterno", am_parking:"Parcheggio", am_entrance:"Entrata privata", am_fenced:"Prop. recintata", am_extinguisher:"Estintore", am_firstaid:"Pronto soccorso",
+    eco_t:"🌱 Casa ecologica", eco_1:"Pompe di calore ad alta efficienza", eco_2:"Illuminazione a risparmio energetico", eco_3:"Raccolta differenziata: vetro, carta, plastica, organico",
+    // ZONA
+    zona_ey:"Mangiare · Bere · Fare la spesa", zona_title:"La <em>zona</em> intorno a te",
+    zona_rest:"🍽 Ristoranti", zona_night:"🍹 Aperitivo & Vita notturna", zona_super:"🛒 Supermercati",
+    tag_seafood:"Pesce · €€", tag_seafood_pizza:"Pesce · Pizza · €€", tag_finedining:"Alta cucina · €€€€", tag_seafood2:"Pesce · €€€", tag_sardinian_pizza:"Cucina sarda · Pizza · €€", tag_meat:"Carne · €€", tag_sardinian:"Cucina sarda · €",
+    tag_winebar:"Wine bar · Aperitivo", tag_cocktail:"Cocktail bar · Musica latina", tag_club:"Discoteca storica", tag_club2:"Club · Ristorante", tag_club3:"Club · Giardino",
+    tag_discount:"Discount · ~1,8 km", tag_supermarket:"Supermercato · ~1,8 km",
+    z_satankitta:"Il più amato di Villasimius. Fregola di mare sublime, zuppa di cozze irraggiungibile, pesce freschissimo. Prenotare obbligatorio.",
+    z_lavela:"Terrazza sul porto. Specialità: tartare di tonno, zuppa di cozze, pasta con l'aragosta. Serate karaoke e salsa.",
+    z_sobat:"Il migliore di Villasimius (TheFork 9.4/10). Cucina raffinata con materie prime eccellenti. Prenota in anticipo.",
+    z_ragnoblu:"Vista mozzafiato vicino a Porto Giunco. Fritto misto eccellente, fregola di mare superlativa. Staff accogliente.",
+    z_lanterna:"Cucina sarda e pesce a prezzi onesti. Ottima qualità/prezzo, spazio esterno caratteristico.",
+    z_bsteak:"Il posto giusto per una bistecca di qualità a prezzi ragionevoli.",
+    z_sabingia:"Piatti tipici sardi abbondanti e genuini. Immerso nella natura, prezzi accessibili.",
+    z_baccus:"Il must dell'aperitivo. Vini sardi sfusi, birre artigianali, taglieri locali. Arredamento con botti e tappi di sughero. Sempre pieno.",
+    z_peyote:"Bar con atmosfere latinoamericane. Aperitivi di giorno, musica e balli la sera.",
+    z_sciabecco:"Il locale storico di Villasimius da 26 anni. Giardino da 2.000 m², due sale, DJ internazionali. In riva al mare.",
+    z_skybeach:"Location elegante e moderna, meta di VIP. Serate ed eventi esclusivi d'estate.",
+    z_lagoon:"Conosciuto come \"da Mariano\". Istituzione di Villasimius: giardino immerso nel verde, cocktail, musica fino a notte.",
+    z_lagoon_addr:"Direzione spiaggia · Villasimius",
+    z_viadelmare_t:"🚶 Via del Mare",
+    z_viadelmare_b:"La sera diventa isola pedonale: bancarelle, locali, gelato e passeggio animato. Il cuore della movida estiva.",
+    z_eurospin:"Il più comodo e fornito. Orari: lun–sab 8:30–21:00 · dom 8:30–20:30.",
+    z_conad:"Ottima scelta per prodotti freschi e locali. Orari: lun–dom 8:00–14:00 / 16:00–20:00.",
+    z_dacla:"Orari comodi anche la sera: lun–dom 8:00–14:00 / 16:00–21:00.",
+    // REGOLE
+    rules_ey:"Regole della casa", rules_title:"Per un soggiorno <em>sereno</em>",
+    r1t:"Check-in / Check-out", r1b:"Da concordare con Daniela o Egidio. Ti chiediamo puntualità.",
+    r2t:"No fumo", r2b:"Vietato fumare in tutti gli spazi interni.",
+    r3t:"No animali domestici", r3b:"Spiacenti, non è possibile portare animali.",
+    r4t:"Rispetto del vicinato", r4b:"Zona residenziale tranquilla. Musica e rumori moderati, specialmente la notte.",
+    r5t:"No gruppi giovanili", r5b:"Non disponibile per feste o gruppi di soli giovani.",
+    r6t:"Raccolta differenziata", r6b:"Si prega di rispettare la separazione dei rifiuti.",
+    r7t:"Cura degli spazi", r7b:"Trattate la casa come la vostra. Lasciatela com'era all'arrivo.",
+    r_cancel_t:"✅ Cancellazione gratuita", r_cancel_b:"Prevista entro i termini indicati al momento della prenotazione.",
+    // DINTORNI
+    around_ey:"Zona e dintorni", around_title:"Esplorare <em>Villasimius</em>",
+    ar_c1t:"Laguna di Notteri", ar_c1b:"A circa 2 km — stagno costiero con fenicotteri rosa. Uno spettacolo visibile tutto l'anno.",
+    ar_c2t:"Porto & escursioni in barca", ar_c2b:"Il porto di Villasimius è la base per tour snorkeling, gite in barca e circumnavigazione di Capo Carbonara.",
+    ar_c3t:"Museo Archaeologico", ar_c3b:"Reperti dal mare e dalla costa dell'area di Capo Carbonara. Ideale per una mattina culturale.",
+    ar_c4t:"Shopping & artigianato", ar_c4b:"Boutique, artigianato sardo, gioiellerie e bancarelle serali lungo il corso pedonale.",
+    ar_c5t:"Specialità sarde da assaggiare", ar_c5b:"Pardulas, gueffus, culurgiones, bottarga, mirto, Cannonau. Chiedici i posti del momento!",
+    // CONTATTI
+    contact_ey:"Contatti", contact_title:"Siamo qui <em>per te</em>",
+    contact_body:"Per qualsiasi necessità, scrivici su WhatsApp. Risponderemo il prima possibile.",
+    c_daniela_l:"Host — Daniela", c_egidio_l:"Host — Egidio", c_addr_l:"Indirizzo",
+    c_sos_t:"🚨 Emergenze", c_sos_b:"Pronto soccorso: <strong>118</strong> · Carabinieri: <strong>112</strong> · Polizia: <strong>113</strong> · Vigili del fuoco: <strong>115</strong>",
+    wa_daniela:"💬 WhatsApp Daniela", wa_egidio:"💬 WhatsApp Egidio",
+    wa_msg_daniela:"Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊",
+    wa_msg_egidio:"Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊"
+  },
+
+  en:{
+    hero_eyebrow:"Guest Guide · Villasimius",
+    chip_sea:"Sea view", chip_garden:"Private garden", chip_guests:"4 guests",
+    nav_welcome:"Welcome", nav_house:"The house", nav_beaches:"Beaches", nav_amenities:"Amenities",
+    nav_area:"Area", nav_rules:"Rules", nav_around:"Around", nav_contact:"Contact",
+    welcome_ey:"Welcome",
+    welcome_title:"You've arrived in <em>paradise</em>",
+    welcome_intro:'"Welcome to Casa Adele — your home by the sea in Villasimius."',
+    welcome_body:"Casa Adele is a cosy terraced house in the quiet Porto Luna area, just steps from the crystal-clear waters of Is Traias beach. Perfect for families and couples seeking genuine relaxation and privacy.",
+    w_c1t:"2 bedrooms", w_c1b:"Double bed + bunk room sleeping 2",
+    w_c2b:"Two floors, sea view",
+    w_c3b:"Walk to Porto Luna & Is Traias",
+    w_c4t:"4 guests", w_c4b:"Ideal for families or two couples",
+    w_loc_t:"📍 Where we are", w_loc_b:"Porto Luna, Punta Molentis area — Villasimius (CA), South-East Sardinia. 1.8 km from the town centre with shops, bars and restaurants.",
+    house_ey:"The house", house_title:"Spaces and <em>comfort</em>",
+    h_c1t:"Ground floor — Living & Kitchen", h_c1b:"Bright living room with sea view over Is Traias. Fully equipped kitchen: hob, oven, microwave, fridge-freezer and coffee machine.",
+    h_c2t:"Ground floor — Bunk room", h_c2b:"Bunk bed sleeping 2, ideal for children or teenagers.",
+    h_c3t:"Upper floor — Double bedroom", h_c3b:"French double bed in an intimate, comfortable space.",
+    h_c4t:"Outdoor — Garden & BBQ", h_c4b:"Private fenced garden with barbecue and garden furniture. Perfect for sunset dinners.",
+    h_c5t:"Bathroom", h_c5b:"Shower, washbasin, hairdryer, towels and toiletries.",
+    beach_ey:"Beaches", beach_title:"The sea of <em>Villasimius</em>",
+    beach_body:"You're in the heart of the Villasimius Regional Nature Park, surrounded by some of the most transparent waters in the Mediterranean.",
+    b_pl:"Your local beach. Light sand, calm waters — perfect for families with children.",
+    b_it:"Visible from the living room window. Blue waters, shallow seabed — a local favourite.",
+    b_vs_name:"Villasimius Beach", b_vs:"The main town beach, lively and equipped with sunbeds, bars and services.",
+    b_pg:"One of the most photographed beaches in all Sardinia. Notteri lagoon behind — pink flamingos included!",
+    b_pm:"Exclusive beach (paid access). Crystal-clear waters and wild landscape — a must-see.",
+    b_act_t:"🤿 Activities nearby", b_act_b:"Diving · Kitesurfing · Windsurfing · Surfing · Sailing · Water sports · Cycling · Coastal hiking",
+    am_ey:"Amenities", am_title:"Everything you <em>need</em>",
+    am_kitchen:"🍳 Kitchen", am_hob:"Hob", am_oven:"Oven", am_micro:"Microwave", am_coffee:"Coffee machine", am_fridge:"Fridge-freezer", am_dishes:"Crockery", am_grill_pan:"Griddle pan", am_cloths:"Kitchen cloths",
+    am_living:"🛋 Living & comfort", am_ac:"Air conditioning", am_washer:"Washing machine", am_iron:"Iron & board", am_linen:"Bed linen", am_towels:"Towels", am_dryer:"Hairdryer",
+    am_outdoor:"🌿 Outdoor & safety", am_garden:"Private garden", am_bbq:"BBQ / Grill", am_furniture:"Garden furniture", am_parking:"Parking", am_entrance:"Private entrance", am_fenced:"Fenced property", am_extinguisher:"Fire extinguisher", am_firstaid:"First aid kit",
+    eco_t:"🌱 Eco-friendly home", eco_1:"High-efficiency heat pumps", eco_2:"Energy-saving lighting", eco_3:"Separate waste: glass, paper, plastic, organic",
+    zona_ey:"Eat · Drink · Shop", zona_title:"What's <em>around you</em>",
+    zona_rest:"🍽 Restaurants", zona_night:"🍹 Aperitivo & Nightlife", zona_super:"🛒 Supermarkets",
+    tag_seafood:"Seafood · €€", tag_seafood_pizza:"Seafood · Pizza · €€", tag_finedining:"Fine dining · €€€€", tag_seafood2:"Seafood · €€€", tag_sardinian_pizza:"Sardinian · Pizza · €€", tag_meat:"Meat · €€", tag_sardinian:"Sardinian · €",
+    tag_winebar:"Wine bar · Aperitivo", tag_cocktail:"Cocktail bar · Latin music", tag_club:"Historic club", tag_club2:"Club · Restaurant", tag_club3:"Club · Garden",
+    tag_discount:"Discount · ~1.8 km", tag_supermarket:"Supermarket · ~1.8 km",
+    z_satankitta:"Villasimius' most loved restaurant. Sublime fregola di mare, legendary mussel soup, ultra-fresh fish. Booking essential.",
+    z_lavela:"Harbour-view terrace. Tuna tartare, mussel soup, lobster pasta. Karaoke & salsa evenings.",
+    z_sobat:"Best in Villasimius (TheFork 9.4/10). Refined cuisine with premium local ingredients. Book well ahead.",
+    z_ragnoblu:"Stunning views near Porto Giunco. Excellent fritto misto, superb fregola. Welcoming staff.",
+    z_lanterna:"Sardinian food and seafood at honest prices. Great value, charming outdoor terrace.",
+    z_bsteak:"The right place for quality steak at reasonable prices.",
+    z_sabingia:"Authentic Sardinian farmhouse cooking. Generous portions at affordable prices, surrounded by nature.",
+    z_baccus:"The aperitivo hotspot in Villasimius. Sardinian bulk wines, craft beers, local cheese boards. Always buzzing.",
+    z_peyote:"Latin-American bar. Aperitivos by day, music and dancing in the evening.",
+    z_sciabecco:"Villasimius' legendary club for 26 years. 2,000 m² garden, two dance floors, international DJs. By the sea.",
+    z_skybeach:"Modern, elegant venue popular with VIPs. Exclusive events all summer.",
+    z_lagoon:"Known as 'da Mariano'. A Villasimius institution: garden setting, cocktails, music until late.",
+    z_lagoon_addr:"Direction beach · Villasimius",
+    z_viadelmare_t:"🚶 Via del Mare", z_viadelmare_b:"In the evening this street becomes a pedestrian zone: market stalls, bars, gelato and a lively promenade. The heart of the summer nightlife.",
+    z_eurospin:"Best stocked and most convenient. Hours: Mon–Sat 8:30–21:00, Sun 8:30–20:30.",
+    z_conad:"Great for fresh and local produce. Hours: Mon–Sun 8:00–14:00 / 16:00–20:00.",
+    z_dacla:"Convenient evening hours too: Mon–Sun 8:00–14:00 / 16:00–21:00.",
+    rules_ey:"House rules", rules_title:"For a <em>peaceful</em> stay",
+    r1t:"Check-in / Check-out", r1b:"To be agreed with Daniela or Egidio. Punctuality appreciated.",
+    r2t:"No smoking", r2b:"Not permitted anywhere indoors.",
+    r3t:"No pets", r3b:"Sorry, pets are not allowed.",
+    r4t:"Quiet neighbourhood", r4b:"Residential area. Please keep noise down, especially at night.",
+    r5t:"No youth groups", r5b:"Not available for parties or groups of young people travelling alone.",
+    r6t:"Recycling", r6b:"Please respect the separate waste collection rules.",
+    r7t:"Take care of the space", r7b:"Treat it as your own. Leave it as you found it.",
+    r_cancel_t:"✅ Free cancellation", r_cancel_b:"Available within the terms indicated at the time of booking.",
+    around_ey:"Area & surroundings", around_title:"Exploring <em>Villasimius</em>",
+    ar_c1t:"Notteri Lagoon", ar_c1b:"About 2 km away — coastal lagoon with resident pink flamingos. A natural spectacle visible all year.",
+    ar_c2t:"Harbour & boat trips", ar_c2b:"Villasimius harbour is the base for snorkelling tours, boat trips and sailing around Capo Carbonara.",
+    ar_c3t:"Archaeological Museum", ar_c3b:"Finds from the seabed and coast of the Capo Carbonara area. A great cultural morning.",
+    ar_c4t:"Shopping & crafts", ar_c4b:"Boutiques, Sardinian craft shops and evening market stalls along the pedestrian promenade.",
+    ar_c5t:"Sardinian specialities to try", ar_c5b:"Pardulas, culurgiones, bottarga, mirto liqueur, Cannonau wine. Ask us for current favourites!",
+    contact_ey:"Contact", contact_title:"We're here <em>for you</em>",
+    contact_body:"For anything you need during your stay, message us on WhatsApp. We'll get back to you as soon as possible.",
+    c_daniela_l:"Host — Daniela", c_egidio_l:"Host — Egidio", c_addr_l:"Address",
+    c_sos_t:"🚨 Emergencies", c_sos_b:"Ambulance: <strong>118</strong> · Police: <strong>112</strong> · Fire: <strong>115</strong>",
+    wa_msg_daniela:"Hi+Daniela%2C+I'm+a+guest+at+Casa+Adele+🌊",
+    wa_msg_egidio:"Hi+Egidio%2C+I'm+a+guest+at+Casa+Adele+🌊"
+  },
+
+  fr:{
+    hero_eyebrow:"Guide des hôtes · Villasimius",
+    chip_sea:"Vue mer", chip_garden:"Jardin privé", chip_guests:"4 hôtes",
+    nav_welcome:"Bienvenue", nav_house:"La maison", nav_beaches:"Plages", nav_amenities:"Équipements",
+    nav_area:"Zone", nav_rules:"Règles", nav_around:"Alentours", nav_contact:"Contact",
+    welcome_ey:"Bienvenue",
+    welcome_title:"Vous êtes arrivé en <em>paradis</em>",
+    welcome_intro:'"Bienvenue à Casa Adele — votre maison au bord de la mer à Villasimius."',
+    welcome_body:"Casa Adele est une charmante maison de ville dans le quartier tranquille de Porto Luna, à quelques pas des eaux cristallines de la plage d'Is Traias. Parfaite pour les familles et les couples en quête de détente et d'intimité.",
+    w_c1t:"2 chambres", w_c1b:"Lit double + chambre avec lits superposés (2 personnes)",
+    w_c2b:"Deux niveaux, vue mer",
+    w_c3b:"À pied de Porto Luna et Is Traias",
+    w_c4t:"4 hôtes", w_c4b:"Idéal pour une famille ou deux couples",
+    w_loc_t:"📍 Où nous sommes", w_loc_b:"Porto Luna, zone de Punta Molentis — Villasimius (CA), Sardaigne Sud-Est. À 1,8 km du centre-ville avec commerces, bars et restaurants.",
+    house_ey:"La maison", house_title:"Espaces et <em>confort</em>",
+    h_c1t:"Rez-de-chaussée — Séjour & Cuisine", h_c1b:"Grand séjour lumineux avec vue mer sur Is Traias. Cuisine entièrement équipée : plaque, four, micro-ondes, réfrigérateur-congélateur et machine à café.",
+    h_c2t:"Rez-de-chaussée — Chambre enfants", h_c2b:"Lits superposés pour 2 personnes, idéaux pour les enfants ou adolescents.",
+    h_c3t:"Étage — Chambre double", h_c3b:"Lit double dans un espace intime et confortable.",
+    h_c4t:"Extérieur — Jardin & BBQ", h_c4b:"Jardin privé clôturé avec barbecue et mobilier de jardin. Parfait pour les dîners au coucher du soleil.",
+    h_c5t:"Salle de bain", h_c5b:"Douche, lavabo, sèche-cheveux, serviettes et produits d'hygiène.",
+    beach_ey:"Plages", beach_title:"La mer de <em>Villasimius</em>",
+    beach_body:"Vous êtes au cœur du Parc Naturel Régional de Villasimius, entouré par les eaux les plus transparentes de la Méditerranée.",
+    b_pl:"La plage juste en bas. Sable fin, eaux calmes — parfaite pour les familles avec enfants.",
+    b_it:"Visible depuis la fenêtre du séjour. Eaux bleues et faible profondeur — un favori local.",
+    b_vs_name:"Plage de Villasimius", b_vs:"La plage principale du village, animée et équipée de transats, bars et services.",
+    b_pg:"L'une des plages les plus photographiées de toute la Sardaigne. Lagune de Notteri derrière — flamants roses inclus !",
+    b_pm:"Plage exclusive (accès payant). Eaux cristallines et paysage sauvage — à ne pas manquer.",
+    b_act_t:"🤿 Activités à proximité", b_act_b:"Plongée · Kitesurf · Windsurf · Surf · Voile · Sports nautiques · Vélo · Randonnée côtière",
+    am_ey:"Équipements", am_title:"Tout ce dont vous <em>avez besoin</em>",
+    am_kitchen:"🍳 Cuisine", am_hob:"Plaques", am_oven:"Four", am_micro:"Micro-ondes", am_coffee:"Machine à café", am_fridge:"Réfrigérateur+congélateur", am_dishes:"Vaisselle", am_grill_pan:"Plancha", am_cloths:"Torchons",
+    am_living:"🛋 Séjour & confort", am_ac:"Climatisation", am_washer:"Lave-linge", am_iron:"Fer à repasser", am_linen:"Linge de lit", am_towels:"Serviettes", am_dryer:"Sèche-cheveux",
+    am_outdoor:"🌿 Extérieur & sécurité", am_garden:"Jardin privé", am_bbq:"BBQ / Grill", am_furniture:"Mobilier de jardin", am_parking:"Parking", am_entrance:"Entrée privée", am_fenced:"Propriété clôturée", am_extinguisher:"Extincteur", am_firstaid:"Trousse de secours",
+    eco_t:"🌱 Maison écologique", eco_1:"Pompes à chaleur haute efficacité", eco_2:"Éclairage basse consommation", eco_3:"Tri sélectif : verre, papier, plastique, organique",
+    zona_ey:"Manger · Boire · Faire ses courses", zona_title:"Ce qu'il y a <em>autour de vous</em>",
+    zona_rest:"🍽 Restaurants", zona_night:"🍹 Apéritif & Vie nocturne", zona_super:"🛒 Supermarchés",
+    tag_seafood:"Poisson · €€", tag_seafood_pizza:"Poisson · Pizza · €€", tag_finedining:"Gastronomie · €€€€", tag_seafood2:"Poisson · €€€", tag_sardinian_pizza:"Sarde · Pizza · €€", tag_meat:"Viande · €€", tag_sardinian:"Cuisine sarde · €",
+    tag_winebar:"Bar à vins · Apéritif", tag_cocktail:"Bar à cocktails · Musique latine", tag_club:"Discothèque historique", tag_club2:"Club · Restaurant", tag_club3:"Club · Jardin",
+    tag_discount:"Discount · ~1,8 km", tag_supermarket:"Supermarché · ~1,8 km",
+    z_satankitta:"Le restaurant préféré de Villasimius. Fregola di mare sublime, soupe de moules inoubliable, poisson ultra-frais. Réservation indispensable.",
+    z_lavela:"Terrasse vue port. Spécialités : tartare de thon, soupe de moules, pâtes au homard. Soirées karaoké et salsa.",
+    z_sobat:"Le meilleur de Villasimius (TheFork 9.4/10). Cuisine raffinée avec des ingrédients locaux d'excellence. Réserver longtemps à l'avance.",
+    z_ragnoblu:"Vue imprenable près de Porto Giunco. Excellent fritto misto, fregola supérieure. Personnel accueillant.",
+    z_lanterna:"Cuisine sarde et poisson à prix honnêtes. Excellent rapport qualité/prix, terrasse extérieure charmante.",
+    z_bsteak:"L'endroit idéal pour un steak de qualité à prix raisonnables.",
+    z_sabingia:"Cuisine sarde authentique et généreuse. Plats copieux à prix accessibles, entouré de nature.",
+    z_baccus:"Le rendez-vous incontournable pour l'apéritif. Vins sardes en vrac, bières artisanales, planches locales. Toujours plein.",
+    z_peyote:"Bar aux ambiances latino-américaines. Apéritifs le jour, musique et danse le soir.",
+    z_sciabecco:"Le club légendaire de Villasimius depuis 26 ans. Jardin de 2.000 m², deux pistes, DJs internationaux. Au bord de la mer.",
+    z_skybeach:"Lieu moderne et élégant, prisé des célébrités. Événements exclusifs tout l'été.",
+    z_lagoon:"Connu sous le nom de « da Mariano ». Une institution : jardin verdoyant, cocktails, musique jusqu'à tard.",
+    z_lagoon_addr:"Direction plage · Villasimius",
+    z_viadelmare_t:"🚶 Via del Mare", z_viadelmare_b:"Le soir, cette rue devient piétonne : marchés, bars, glaces et promenade animée. Le cœur de la vie nocturne estivale.",
+    z_eurospin:"Le plus pratique et le mieux fourni. Horaires : lun–sam 8h30–21h00, dim 8h30–20h30.",
+    z_conad:"Excellent choix pour les produits frais et locaux. Horaires : lun–dim 8h00–14h00 / 16h00–20h00.",
+    z_dacla:"Horaires pratiques aussi le soir : lun–dim 8h00–14h00 / 16h00–21h00.",
+    rules_ey:"Règles de la maison", rules_title:"Pour un séjour <em>serein</em>",
+    r1t:"Arrivée / Départ", r1b:"À convenir avec Daniela ou Egidio. Nous comptons sur votre ponctualité.",
+    r2t:"Non-fumeur", r2b:"Il est interdit de fumer à l'intérieur.",
+    r3t:"Animaux non admis", r3b:"Désolé, les animaux de compagnie ne sont pas autorisés.",
+    r4t:"Respect du voisinage", r4b:"Zone résidentielle calme. Musique et bruits modérés, surtout la nuit.",
+    r5t:"Pas de groupes de jeunes", r5b:"Non disponible pour des fêtes ou groupes de jeunes seuls.",
+    r6t:"Tri sélectif", r6b:"Merci de respecter les règles de tri des déchets.",
+    r7t:"Respect des lieux", r7b:"Traitez la maison comme la vôtre. Laissez-la dans l'état où vous l'avez trouvée.",
+    r_cancel_t:"✅ Annulation gratuite", r_cancel_b:"Disponible dans les conditions indiquées lors de la réservation.",
+    around_ey:"Zone & alentours", around_title:"Explorer <em>Villasimius</em>",
+    ar_c1t:"Lagune de Notteri", ar_c1b:"À environ 2 km — étang côtier avec une colonie de flamants roses. Un spectacle naturel visible toute l'année.",
+    ar_c2t:"Port & excursions en bateau", ar_c2b:"Le port de Villasimius est la base des sorties snorkeling, excursions en bateau et tours du Capo Carbonara.",
+    ar_c3t:"Musée Archéologique", ar_c3b:"Vestiges du fond marin et de la côte autour du Capo Carbonara. Idéal pour une matinée culturelle.",
+    ar_c4t:"Shopping & artisanat", ar_c4b:"Boutiques, artisanat sarde et marchés nocturnes le long de la promenade piétonne.",
+    ar_c5t:"Spécialités sardes à goûter", ar_c5b:"Pardulas, culurgiones, bottarga, limoncello au myrte, Cannonau. Demandez-nous nos adresses du moment !",
+    contact_ey:"Contact", contact_title:"Nous sommes là <em>pour vous</em>",
+    contact_body:"Pour tout besoin pendant votre séjour, contactez-nous sur WhatsApp. Nous répondrons dès que possible.",
+    c_daniela_l:"Hôte — Daniela", c_egidio_l:"Hôte — Egidio", c_addr_l:"Adresse",
+    c_sos_t:"🚨 Urgences", c_sos_b:"SAMU : <strong>118</strong> · Carabiniers : <strong>112</strong> · Police : <strong>113</strong> · Pompiers : <strong>115</strong>",
+    wa_msg_daniela:"Bonjour+Daniela%2C+je+suis+un+hôte+de+Casa+Adele+🌊",
+    wa_msg_egidio:"Bonjour+Egidio%2C+je+suis+un+hôte+de+Casa+Adele+🌊"
+  },
+
+  de:{
+    hero_eyebrow:"Gästeführer · Villasimius",
+    chip_sea:"Meerblick", chip_garden:"Privatgarten", chip_guests:"4 Gäste",
+    nav_welcome:"Willkommen", nav_house:"Das Haus", nav_beaches:"Strände", nav_amenities:"Ausstattung",
+    nav_area:"Umgebung", nav_rules:"Regeln", nav_around:"Ausflüge", nav_contact:"Kontakt",
+    welcome_ey:"Willkommen",
+    welcome_title:"Sie sind im <em>Paradies</em> angekommen",
+    welcome_intro:'"Willkommen in Casa Adele — Ihr Zuhause am Meer in Villasimius."',
+    welcome_body:"Casa Adele ist ein gemütliches Reihenhaus in der ruhigen Gegend Porto Luna, nur wenige Schritte vom kristallklaren Wasser des Strandes Is Traias entfernt. Ideal für Familien und Paare, die echte Entspannung und Privatsphäre suchen.",
+    w_c1t:"2 Schlafzimmer", w_c1b:"Doppelbett + Kinderzimmer mit Etagenbett (2 Personen)",
+    w_c2b:"Zwei Etagen, Meerblick",
+    w_c3b:"Zu Fuß zu Porto Luna und Is Traias",
+    w_c4t:"4 Gäste", w_c4b:"Ideal für Familien oder zwei Paare",
+    w_loc_t:"📍 Wo wir sind", w_loc_b:"Porto Luna, Gegend Punta Molentis — Villasimius (CA), Südost-Sardinien. 1,8 km vom Stadtzentrum mit Einkäufen, Bars und Restaurants.",
+    house_ey:"Das Haus", house_title:"Räume und <em>Komfort</em>",
+    h_c1t:"Erdgeschoss — Wohnzimmer & Küche", h_c1b:"Helles, geräumiges Wohnzimmer mit Meerblick auf Is Traias. Voll ausgestattete Küche: Herd, Backofen, Mikrowelle, Kühl-Gefrierkombi und Kaffeemaschine.",
+    h_c2t:"Erdgeschoss — Kinderzimmer", h_c2b:"Etagenbett für 2 Personen, ideal für Kinder oder Jugendliche.",
+    h_c3t:"Obergeschoss — Schlafzimmer", h_c3b:"Französisches Doppelbett in einem intimen, komfortablen Raum.",
+    h_c4t:"Außenbereich — Garten & BBQ", h_c4b:"Privater eingezäunter Garten mit Grill und Gartenmöbeln. Perfekt für Abendessen bei Sonnenuntergang.",
+    h_c5t:"Badezimmer", h_c5b:"Dusche, Waschbecken, Haartrockner, Handtücher und Hygieneartikel.",
+    beach_ey:"Strände", beach_title:"Das Meer von <em>Villasimius</em>",
+    beach_body:"Sie befinden sich im Herzen des Regionalen Naturparks Villasimius, umgeben von einigen der transparentesten Gewässer des Mittelmeers.",
+    b_pl:"Der Strand direkt vor dem Haus. Heller Sand, ruhiges Wasser — perfekt für Familien mit Kindern.",
+    b_it:"Vom Wohnzimmerfenster aus sichtbar. Blaues Wasser, flacher Meeresgrund — ein Liebling der Einheimischen.",
+    b_vs_name:"Strand von Villasimius", b_vs:"Der Hauptstrand des Ortes, belebt und ausgestattet mit Liegen, Bars und Dienstleistungen.",
+    b_pg:"Einer der meistfotografierten Strände Sardiniens. Notteri-Lagune dahinter — rosa Flamingos inklusive!",
+    b_pm:"Exklusiver Strand (kostenpflichtiger Zugang). Kristallklares Wasser und wilde Landschaft — ein Muss.",
+    b_act_t:"🤿 Aktivitäten in der Nähe", b_act_b:"Tauchen · Kitesurfen · Windsurfen · Surfen · Segeln · Wassersport · Radfahren · Küstenwandern",
+    am_ey:"Ausstattung", am_title:"Alles was Sie <em>brauchen</em>",
+    am_kitchen:"🍳 Küche", am_hob:"Herd", am_oven:"Backofen", am_micro:"Mikrowelle", am_coffee:"Kaffeemaschine", am_fridge:"Kühl-Gefrierkombi", am_dishes:"Geschirr", am_grill_pan:"Grillpfanne", am_cloths:"Küchentücher",
+    am_living:"🛋 Wohnen & Komfort", am_ac:"Klimaanlage", am_washer:"Waschmaschine", am_iron:"Bügeleisen & Brett", am_linen:"Bettwäsche", am_towels:"Handtücher", am_dryer:"Haartrockner",
+    am_outdoor:"🌿 Außen & Sicherheit", am_garden:"Privatgarten", am_bbq:"BBQ / Grill", am_furniture:"Gartenmöbel", am_parking:"Parkplatz", am_entrance:"Privater Eingang", am_fenced:"Eingezäuntes Grundstück", am_extinguisher:"Feuerlöscher", am_firstaid:"Erste-Hilfe-Set",
+    eco_t:"🌱 Umweltfreundliches Haus", eco_1:"Hocheffiziente Wärmepumpen", eco_2:"Energiesparende Beleuchtung", eco_3:"Mülltrennung: Glas, Papier, Plastik, Bioabfall",
+    zona_ey:"Essen · Trinken · Einkaufen", zona_title:"Was ist <em>in der Nähe</em>",
+    zona_rest:"🍽 Restaurants", zona_night:"🍹 Aperitivo & Nachtleben", zona_super:"🛒 Supermärkte",
+    tag_seafood:"Meeresfrüchte · €€", tag_seafood_pizza:"Fisch · Pizza · €€", tag_finedining:"Feinküche · €€€€", tag_seafood2:"Fisch · €€€", tag_sardinian_pizza:"Sardinisch · Pizza · €€", tag_meat:"Fleisch · €€", tag_sardinian:"Sardinische Küche · €",
+    tag_winebar:"Weinbar · Aperitivo", tag_cocktail:"Cocktailbar · Latinomusik", tag_club:"Historischer Club", tag_club2:"Club · Restaurant", tag_club3:"Club · Garten",
+    tag_discount:"Discounter · ~1,8 km", tag_supermarket:"Supermarkt · ~1,8 km",
+    z_satankitta:"Das beliebteste Restaurant in Villasimius. Erlesene Fregola di mare, legendäre Muschelsuppe, frischster Fisch. Reservierung unbedingt erforderlich.",
+    z_lavela:"Terrasse mit Hafenblick. Spezialitäten: Thunfisch-Tatar, Muschelsuppe, Pasta mit Hummer. Karaoke- und Salsa-Abende.",
+    z_sobat:"Bestes Restaurant in Villasimius (TheFork 9,4/10). Raffinierte Küche mit erstklassigen lokalen Zutaten. Frühzeitig reservieren.",
+    z_ragnoblu:"Atemberaubender Ausblick in der Nähe von Porto Giunco. Ausgezeichnetes Fritto misto, herrliche Fregola. Herzliches Personal.",
+    z_lanterna:"Sardische Küche und Fisch zu ehrlichen Preisen. Gutes Preis-Leistungs-Verhältnis, charmante Außenterrasse.",
+    z_bsteak:"Der richtige Ort für ein qualitativ hochwertiges Steak zu vernünftigen Preisen.",
+    z_sabingia:"Authentische sardische Landküche. Großzügige Portionen zu erschwinglichen Preisen, inmitten der Natur.",
+    z_baccus:"Der Aperitivo-Hotspot in Villasimius. Sardische Weine vom Fass, Craftbier, lokale Käseplatten. Immer voll.",
+    z_peyote:"Bar mit lateinamerikanischem Flair. Aperitivos am Tag, Musik und Tanz am Abend.",
+    z_sciabecco:"Der legendäre Club von Villasimius seit 26 Jahren. 2.000 m² Garten, zwei Tanzflächen, internationale DJs. Direkt am Meer.",
+    z_skybeach:"Modernes, elegantes Lokal, beliebt bei VIPs. Exklusive Veranstaltungen den ganzen Sommer.",
+    z_lagoon:"Bekannt als „da Mariano". Ein Villasimius-Wahrzeichen: grüner Garten, Cocktails, Musik bis spät.",
+    z_lagoon_addr:"Richtung Strand · Villasimius",
+    z_viadelmare_t:"🚶 Via del Mare", z_viadelmare_b:"Am Abend wird diese Straße zur Fußgängerzone: Marktstände, Bars, Gelato und buntes Treiben. Das Herz des Sommerlebens.",
+    z_eurospin:"Am besten bestückt und bequemsten. Öffnungszeiten: Mo–Sa 8:30–21:00, So 8:30–20:30.",
+    z_conad:"Ideal für frische und lokale Produkte. Öffnungszeiten: Mo–So 8:00–14:00 / 16:00–20:00.",
+    z_dacla:"Bequeme Abendöffnungszeiten: Mo–So 8:00–14:00 / 16:00–21:00.",
+    rules_ey:"Hausordnung", rules_title:"Für einen <em>angenehmen</em> Aufenthalt",
+    r1t:"Check-in / Check-out", r1b:"Mit Daniela oder Egidio abzustimmen. Wir bitten um Pünktlichkeit.",
+    r2t:"Rauchverbot", r2b:"Rauchen ist in allen Innenräumen verboten.",
+    r3t:"Keine Haustiere", r3b:"Leider sind Haustiere nicht erlaubt.",
+    r4t:"Rücksicht auf Nachbarn", r4b:"Ruhiges Wohngebiet. Bitte Lärm gering halten, besonders nachts.",
+    r5t:"Keine Jugendgruppen", r5b:"Nicht verfügbar für Partys oder reine Jugendgruppen.",
+    r6t:"Mülltrennung", r6b:"Bitte die Regeln zur Mülltrennung einhalten.",
+    r7t:"Pfleglicher Umgang", r7b:"Behandeln Sie das Haus wie Ihres. Hinterlassen Sie es so, wie Sie es vorgefunden haben.",
+    r_cancel_t:"✅ Kostenlose Stornierung", r_cancel_b:"Im Rahmen der bei der Buchung angegebenen Bedingungen möglich.",
+    around_ey:"Zone & Umgebung", around_title:"<em>Villasimius</em> erkunden",
+    ar_c1t:"Notteri-Lagune", ar_c1b:"Ca. 2 km entfernt — Küstenlagune mit einer Kolonie rosafarbener Flamingos. Das ganze Jahr über sichtbar.",
+    ar_c2t:"Hafen & Bootsausflüge", ar_c2b:"Der Hafen von Villasimius ist Ausgangspunkt für Schnorchel-Touren, Bootsfahrten und Umrundungen des Capo Carbonara.",
+    ar_c3t:"Archäologisches Museum", ar_c3b:"Funde vom Meeresboden und der Küste rund um Capo Carbonara. Ideal für einen kulturellen Morgen.",
+    ar_c4t:"Shopping & Kunsthandwerk", ar_c4b:"Boutiquen, sardisches Kunsthandwerk und Abendmärkte entlang der Fußgängerzone.",
+    ar_c5t:"Sardische Spezialitäten", ar_c5b:"Pardulas, Culurgiones, Bottarga, Myrtenlikör, Cannonau-Wein. Fragen Sie uns nach aktuellen Empfehlungen!",
+    contact_ey:"Kontakt", contact_title:"Wir sind <em>für Sie da</em>",
+    contact_body:"Bei allem, was Sie während Ihres Aufenthalts benötigen, schreiben Sie uns auf WhatsApp. Wir antworten so schnell wie möglich.",
+    c_daniela_l:"Gastgeber — Daniela", c_egidio_l:"Gastgeber — Egidio", c_addr_l:"Adresse",
+    c_sos_t:"🚨 Notfälle", c_sos_b:"Notarzt: <strong>118</strong> · Polizei: <strong>112</strong> · Feuerwehr: <strong>115</strong>",
+    wa_msg_daniela:"Hallo+Daniela%2C+ich+bin+Gast+in+Casa+Adele+🌊",
+    wa_msg_egidio:"Hallo+Egidio%2C+ich+bin+Gast+in+Casa+Adele+🌊"
+  }
+};
+
+let lang = 'it';
+let cur = 'benvenuto';
+
+function setLang(l) {
+  lang = l;
+  const d = T[l];
+  // update all data-t elements
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (d[key] !== undefined) el.innerHTML = d[key];
+  });
+  // update lang buttons
+  document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.lbtn[onclick="setLang(\''+l+'\')"]').classList.add('active');
+  // update WhatsApp links
+  const waDaniela = document.getElementById('wa-daniela');
+  const waEgidio = document.getElementById('wa-egidio');
+  if (waDaniela) waDaniela.href = 'https://wa.me/393466225194?text=' + d.wa_msg_daniela;
+  if (waEgidio) waEgidio.href = 'https://wa.me/393408379789?text=' + d.wa_msg_egidio;
+  document.documentElement.lang = l;
+  syncNav(cur);
+}
+
+function go(id, btn) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  cur = id;
+  syncNav(id);
+  window.scrollTo({ top: document.getElementById('mainNav').offsetTop - 1, behavior: 'smooth' });
+}
+
+function syncNav(id) {
+  document.querySelectorAll('.nbtn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('onclick') === "go('"+id+"',this)");
+  });
+}
+
+// Init
+setLang('it');
+</script>
+</body>
+</html>
