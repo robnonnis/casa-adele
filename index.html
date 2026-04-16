@@ -16,6 +16,8 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 /* HERO */
 .hero{position:relative;height:100svh;min-height:560px;background:linear-gradient(160deg,#1a3a4f 0%,#2d6a8a 35%,#4a9ab8 60%,#c8a882 85%,#e8d5b8 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 48px;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(90,154,191,.3) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(196,122,69,.2) 0%,transparent 50%)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,35,50,.75) 0%,rgba(15,35,50,.25) 60%,transparent 100%);z-index:1}
 .hero-eyebrow{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;position:relative;z-index:2}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,12vw,72px);font-weight:300;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:6px}
 .hero-title em{font-style:italic;color:rgba(255,255,255,.85)}
@@ -136,6 +138,11 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 
 <!-- HERO -->
 <div class="hero">
+  <!-- VIDEO — sostituisci src con il tuo video Cloudinary -->
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"
+    src="INSERISCI_URL_VIDEO_CLOUDINARY">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="ltog">
     <button class="lbtn active" data-lang="it">IT</button>
     <button class="lbtn" data-lang="en">EN</button>
@@ -198,7 +205,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 
   <!-- Camera matrimoniale -->
   <div class="card">
-    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/575c8896-a1a8-4c84-9213-6bc17e9bcc35_wfsuac.jpg"]'></div>
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/575c8896-a1a8-4c84-9213-6bc17e9bcc35_wfsuac.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776367377/91639589-0a3e-4d57-9849-0b07c90c43c4_umbnju.jpg"]'></div>
     <div class="ci">🌙</div><div class="ct" data-t="h_c3t"></div><div class="cb" data-t="h_c3b"></div>
   </div>
 
@@ -210,7 +217,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 
   <!-- Giardino & BBQ -->
   <div class="card">
-    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365605/df071b51-9f96-4970-b59e-63e15006b62d_pybsup.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/f2b2da83-72a8-4110-a24a-4e6107f060af_rg41bi.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/e4933759-d5db-4c0a-9c37-02e41d631505_b67w68.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365608/d58590cf-f5b7-4f04-8692-e7e144a304fa_mpusm3.jpg"]'></div>
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/f2b2da83-72a8-4110-a24a-4e6107f060af_rg41bi.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/e4933759-d5db-4c0a-9c37-02e41d631505_b67w68.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365608/d58590cf-f5b7-4f04-8692-e7e144a304fa_mpusm3.jpg"]'></div>
     <div class="ci">🌿</div><div class="ct" data-t="h_c4t"></div><div class="cb" data-t="h_c4b"></div>
   </div>
 
