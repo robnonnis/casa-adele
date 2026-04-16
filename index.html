@@ -116,6 +116,20 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 /* CTA */
 .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:50px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:none;text-decoration:none;transition:all .2s;margin-bottom:9px}
 .ctawa{background:#25D366;color:#fff}
+
+/* GALLERY */
+.gal{position:relative;width:calc(100% + 30px);margin:-15px -15px 14px;border-radius:var(--r) var(--r) 0 0;overflow:hidden;aspect-ratio:16/9;background:#e8e0d8}
+.gal-track{display:flex;height:100%;transition:transform .35s ease}
+.gal-slide{flex-shrink:0;width:100%;height:100%;object-fit:cover}
+.gal-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;backdrop-filter:blur(4px)}
+.gal-btn.prev{left:8px}
+.gal-btn.next{right:8px}
+.gal-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px}
+.gal-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .2s}
+.gal-dot.on{background:#fff}
+.gal-single{pointer-events:none}
+.gal-single .gal-btn{display:none}
+.gal-single .gal-dots{display:none}
 </style>
 </head>
 <body>
@@ -175,11 +189,37 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 <section id="casa" class="sec">
   <div class="ey" data-t="house_ey"></div>
   <div class="st" data-t="house_title"></div>
-  <div class="card"><div class="ci">🪴</div><div class="ct" data-t="h_c1t"></div><div class="cb" data-t="h_c1b"></div></div>
-  <div class="card"><div class="ci">🛏</div><div class="ct" data-t="h_c2t"></div><div class="cb" data-t="h_c2b"></div></div>
-  <div class="card"><div class="ci">🌙</div><div class="ct" data-t="h_c3t"></div><div class="cb" data-t="h_c3b"></div></div>
-  <div class="card"><div class="ci">🌿</div><div class="ct" data-t="h_c4t"></div><div class="cb" data-t="h_c4b"></div></div>
-  <div class="card"><div class="ci">🚿</div><div class="ct" data-t="h_c5t"></div><div class="cb" data-t="h_c5b"></div></div>
+
+  <!-- Soggiorno & Cucina -->
+  <div class="card">
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/5fc2548e-b8c7-4716-9d79-48db0bcbc8c1_nltzwj.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/60fc6205-9dd4-4980-bf24-39852d9aa49f_bjrodm.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365604/3eed81c1-0454-4173-8f9b-9ba6e1988165_ovjl6n.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365605/a4664094-eb5c-4f39-9562-bbb3373b2a30_rgpc3s.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365607/0726fa91-4733-416a-9cb4-a56bc4f7e925_bbzvtb.jpg"]'></div>
+    <div class="ci">🪴</div><div class="ct" data-t="h_c1t"></div><div class="cb" data-t="h_c1b"></div>
+  </div>
+
+  <!-- Camera matrimoniale -->
+  <div class="card">
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/575c8896-a1a8-4c84-9213-6bc17e9bcc35_wfsuac.jpg"]'></div>
+    <div class="ci">🌙</div><div class="ct" data-t="h_c3t"></div><div class="cb" data-t="h_c3b"></div>
+  </div>
+
+  <!-- Cameretta piano terra -->
+  <div class="card">
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365607/1314ee03-e8e3-4719-8892-f9d826f2d858_zniivz.jpg"]'></div>
+    <div class="ci">🛏</div><div class="ct" data-t="h_c2t"></div><div class="cb" data-t="h_c2b"></div>
+  </div>
+
+  <!-- Giardino & BBQ -->
+  <div class="card">
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365605/df071b51-9f96-4970-b59e-63e15006b62d_pybsup.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/f2b2da83-72a8-4110-a24a-4e6107f060af_rg41bi.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/e4933759-d5db-4c0a-9c37-02e41d631505_b67w68.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365608/d58590cf-f5b7-4f04-8692-e7e144a304fa_mpusm3.jpg"]'></div>
+    <div class="ci">🌿</div><div class="ct" data-t="h_c4t"></div><div class="cb" data-t="h_c4b"></div>
+  </div>
+
+  <!-- Bagno -->
+  <div class="card">
+    <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/e3050c6d-d585-4246-affd-0374876d612d_yobkhp.jpg"]'></div>
+    <div class="ci">🚿</div><div class="ct" data-t="h_c5t"></div><div class="cb" data-t="h_c5b"></div>
+  </div>
+
 </section>
 
 <!-- ═══ SPIAGGE ═══ -->
