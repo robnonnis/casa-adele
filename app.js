@@ -85,6 +85,8 @@ it:{
   info_host_t:"I tuoi host",
   map_ey:"Mappa", map_title:"Punti di <em>riferimento</em>",
   map_open_gmaps:"Apri in Google Maps",
+  map_open_casa:"Casa Adele su Maps",
+  map_open_waste:"Raccolta su Maps",
   map_key_places:"📍 Distanze utili",
   map_home:"Casa Adele", map_waste_point:"Raccolta rifiuti",
   map_waste_point_v:"~200m a piedi · 09:00–10:00",
@@ -230,6 +232,8 @@ en:{
   info_host_t:"Your hosts",
   map_ey:"Map", map_title:"Key <em>locations</em>",
   map_open_gmaps:"Open in Google Maps",
+  map_open_casa:"Casa Adele on Maps",
+  map_open_waste:"Waste point on Maps",
   map_key_places:"📍 Useful distances",
   map_home:"Casa Adele", map_waste_point:"Waste collection",
   map_waste_point_v:"~200m walk · 09:00–10:00",
@@ -375,6 +379,8 @@ fr:{
   info_host_t:"Vos hôtes",
   map_ey:"Carte", map_title:"Points de <em>repère</em>",
   map_open_gmaps:"Ouvrir dans Google Maps",
+  map_open_casa:"Casa Adele sur Maps",
+  map_open_waste:"Collecte sur Maps",
   map_key_places:"📍 Distances utiles",
   map_home:"Casa Adele", map_waste_point:"Collecte des déchets",
   map_waste_point_v:"~200m à pied · 09h00–10h00",
@@ -520,6 +526,8 @@ de:{
   info_host_t:"Ihre Gastgeber",
   map_ey:"Karte", map_title:"Wichtige <em>Orte</em>",
   map_open_gmaps:"In Google Maps öffnen",
+  map_open_casa:"Casa Adele auf Maps",
+  map_open_waste:"Sammelstelle auf Maps",
   map_key_places:"📍 Nützliche Entfernungen",
   map_home:"Casa Adele", map_waste_point:"Müllsammelstelle",
   map_waste_point_v:"~200m zu Fuß · 09:00–10:00",
@@ -610,6 +618,7 @@ function go(id) {
   cur = id;
   syncNav(id);
   if (id === 'eventi' && !eventsLoaded) loadAIEvents();
+  if (id === 'mappa') initMap();
   window.scrollTo({ top: document.getElementById('mainNav').offsetTop - 1, behavior: 'smooth' });
 }
 
@@ -710,6 +719,58 @@ function checkAllDone() {
   const allDone = [...items].every(i => i.classList.contains('done'));
   const msg = document.getElementById('co-done-msg');
   if (msg) msg.style.display = allDone ? 'block' : 'none';
+}
+
+// ── MAP (Leaflet) ──
+let mapInstance = null;
+function initMap() {
+  if (mapInstance) return; // init once
+  const container = document.getElementById('map-container');
+  if (!container || typeof L === 'undefined') return;
+
+  // Coordinate casa e raccolta
+  const CASA   = [39.1326561, 9.5354061];
+  const WASTE  = [39.132137,  9.534307];
+
+  mapInstance = L.map('map-container', { zoomControl: true, scrollWheelZoom: false })
+    .setView([39.1324, 9.5349], 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap',
+    maxZoom: 19
+  }).addTo(mapInstance);
+
+  // Icona casa personalizzata
+  const iconCasa = L.divIcon({
+    className: '',
+    html: '<div style="background:var(--terra,#c47a45);color:#fff;font-size:20px;width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid #fff"><span style="transform:rotate(45deg)">🏠</span></div>',
+    iconSize: [38, 38],
+    iconAnchor: [19, 38],
+    popupAnchor: [0, -40]
+  });
+
+  // Icona raccolta personalizzata
+  const iconWaste = L.divIcon({
+    className: '',
+    html: '<div style="background:#3a7ca5;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid #fff"><span style="transform:rotate(45deg)">🗑</span></div>',
+    iconSize: [34, 34],
+    iconAnchor: [17, 34],
+    popupAnchor: [0, -36]
+  });
+
+  const d = T[lang] || T.it;
+
+  L.marker(CASA, { icon: iconCasa })
+    .addTo(mapInstance)
+    .bindPopup(`<b>🏠 Casa Adele</b><br><span style="font-size:12px;color:#666">Porto Luna · Punta Molentis</span><br><a href="https://www.google.com/maps/place/Casa+Adele+Porto+Luna/@39.1326561,9.5354061,17z" target="_blank" style="font-size:12px;color:#4285f4">Google Maps ↗</a>`)
+    .openPopup();
+
+  L.marker(WASTE, { icon: iconWaste })
+    .addTo(mapInstance)
+    .bindPopup(`<b>🗑 ${d.map_waste_point || 'Raccolta rifiuti'}</b><br><span style="font-size:12px;color:#666">${d.map_waste_point_v || '~200m · 09:00–10:00'}</span>`);
+
+  // Forza ridimensionamento (serve se la sezione era hidden)
+  setTimeout(() => mapInstance.invalidateSize(), 100);
 }
 
 // ── GALLERY ──
