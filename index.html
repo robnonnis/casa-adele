@@ -187,6 +187,12 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <button class="nbtn" data-section="dintorni"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
     <button class="nbtn" data-section="contatti"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
   </div>
+  <div class="nav-row">
+    <button class="nbtn" data-section="info"><span class="ni">ℹ️</span><span class="nl" data-t="nav_info"></span></button>
+    <button class="nbtn" data-section="meteo"><span class="ni">⛅</span><span class="nl" data-t="nav_weather"></span></button>
+    <button class="nbtn" data-section="eventi"><span class="ni">🎉</span><span class="nl" data-t="nav_events"></span></button>
+    <button class="nbtn" data-section="mappa"><span class="ni">📍</span><span class="nl" data-t="nav_map"></span></button>
+  </div>
 </nav>
 
 <!-- ═══ BENVENUTO ═══ -->
@@ -377,6 +383,183 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <a class="cta ctawa" id="wa-daniela" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Daniela</a>
   <a class="cta ctawa" id="wa-egidio" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Egidio</a>
   <div class="hl" style="margin-top:12px"><div class="hlt" data-t="c_sos_t"></div><div class="hlb" data-t="c_sos_b"></div></div>
+</section>
+
+<!-- ═══ INFO PRATICHE ═══ -->
+<section id="info" class="sec">
+  <div class="ey" data-t="info_ey"></div>
+  <div class="st" data-t="info_title"></div>
+
+  <!-- WiFi -->
+  <div class="card">
+    <div class="ci">📶</div>
+    <div class="ct" data-t="info_wifi_t"></div>
+    <div class="ir" style="border-bottom:1px solid rgba(184,169,154,.2);padding:10px 0">
+      <div class="iric">📡</div>
+      <div><div class="irl" data-t="info_wifi_name_l"></div><div class="irv" id="wifi-name" style="font-size:16px;font-weight:500;letter-spacing:.05em">CasaAdele_WiFi</div></div>
+    </div>
+    <div class="ir" style="padding:10px 0">
+      <div class="iric">🔐</div>
+      <div style="flex:1"><div class="irl" data-t="info_wifi_pass_l"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="irv" id="wifi-pass" style="font-size:16px;font-weight:500;letter-spacing:.08em;filter:blur(5px);transition:.3s" id="wpass">••••••••••</div>
+          <button id="wifi-reveal" style="background:var(--terra);border:none;color:#fff;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;cursor:pointer" data-t="info_wifi_show"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Raccolta differenziata -->
+  <div class="card">
+    <div class="ci">♻️</div>
+    <div class="ct" data-t="info_waste_t"></div>
+    <div class="cb" style="margin-bottom:12px" data-t="info_waste_b"></div>
+    <div class="hl" style="margin-bottom:12px">
+      <div class="hlt">🕘 <span data-t="info_waste_time_t"></span></div>
+      <div class="hlb" data-t="info_waste_time_b"></div>
+    </div>
+    <div style="background:#f0f7f0;border-radius:10px;padding:12px;border:1px solid rgba(90,154,90,.2)">
+      <div style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px" data-t="info_waste_types_t"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div class="ai" style="background:#fff"><span>🟡</span><span data-t="wt_organic"></span></div>
+        <div class="ai" style="background:#fff"><span>🔵</span><span data-t="wt_paper"></span></div>
+        <div class="ai" style="background:#fff"><span>🟡</span><span data-t="wt_plastic"></span></div>
+        <div class="ai" style="background:#fff"><span>🟢</span><span data-t="wt_glass"></span></div>
+        <div class="ai" style="background:#fff"><span>⚫</span><span data-t="wt_mixed"></span></div>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:12px;font-weight:300;color:var(--mid)" data-t="info_waste_note"></div>
+  </div>
+
+  <!-- Check-in/out -->
+  <div class="card">
+    <div class="ci">🗝</div>
+    <div class="ct" data-t="info_checkin_t"></div>
+    <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
+      <div class="iric">🟢</div>
+      <div><div class="irl">Check-in</div><div class="irv" data-t="info_checkin_v"></div></div>
+    </div>
+    <div class="ir" style="padding:10px 0">
+      <div class="iric">🔴</div>
+      <div><div class="irl">Check-out</div><div class="irv" data-t="info_checkout_v"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ METEO & EVENTI ═══ -->
+<section id="meteo" class="sec">
+  <div class="ey" data-t="meteo_ey"></div>
+  <div class="st" data-t="meteo_title"></div>
+
+  <!-- Meteo live -->
+  <div class="card" id="weather-card">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="font-size:48px;line-height:1" id="w-icon">⏳</div>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--dark);line-height:1" id="w-temp">--°</div>
+        <div style="font-size:13px;font-weight:300;color:var(--mid)" id="w-desc">Caricamento...</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px">
+      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_humidity"></div>
+        <div style="font-size:15px;font-weight:500;color:var(--dark)" id="w-humidity">--</div>
+      </div>
+      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_wind"></div>
+        <div style="font-size:15px;font-weight:500;color:var(--dark)" id="w-wind">--</div>
+      </div>
+      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_sea"></div>
+        <div style="font-size:15px;font-weight:500;color:var(--sea)" id="w-sea">--</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--soft);margin-top:10px;text-align:right" id="w-updated"></div>
+  </div>
+
+  <!-- Previsioni 5 giorni -->
+  <div id="forecast-row" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px"></div>
+</section>
+
+<!-- ═══ EVENTI ═══ -->
+<section id="eventi" class="sec">
+  <div class="ey" data-t="eventi_ey"></div>
+  <div class="st" data-t="eventi_title"></div>
+
+  <!-- AI-powered live events -->
+  <div class="hl" style="margin-bottom:16px">
+    <div class="hlt" data-t="ev_live_t"></div>
+    <div class="hlb" data-t="ev_live_b"></div>
+  </div>
+  <div id="ai-events-container">
+    <div style="text-align:center;padding:20px;color:var(--mid);font-size:13px" id="ai-events-loading" data-t="ev_loading"></div>
+  </div>
+
+  <!-- Eventi fissi stagionali -->
+  <div class="sub" data-t="ev_fixed_title"></div>
+
+  <div class="pc"><div class="pe">🎆</div><div class="pi">
+    <div class="pn" data-t="ev1_t"></div>
+    <span class="pt tr" data-t="ev1_date"></span>
+    <div class="pd" data-t="ev1_b"></div>
+  </div></div>
+
+  <div class="pc"><div class="pe">🎵</div><div class="pi">
+    <div class="pn" data-t="ev2_t"></div>
+    <span class="pt tb" data-t="ev2_date"></span>
+    <div class="pd" data-t="ev2_b"></div>
+  </div></div>
+
+  <div class="pc"><div class="pe">🎭</div><div class="pi">
+    <div class="pn" data-t="ev3_t"></div>
+    <span class="pt tb" data-t="ev3_date"></span>
+    <div class="pd" data-t="ev3_b"></div>
+  </div></div>
+
+  <div class="pc"><div class="pe">🏊</div><div class="pi">
+    <div class="pn" data-t="ev4_t"></div>
+    <span class="pt ts" data-t="ev4_date"></span>
+    <div class="pd" data-t="ev4_b"></div>
+  </div></div>
+
+  <div class="pc"><div class="pe">🍷</div><div class="pi">
+    <div class="pn" data-t="ev5_t"></div>
+    <span class="pt tr" data-t="ev5_date"></span>
+    <div class="pd" data-t="ev5_b"></div>
+  </div></div>
+
+  <!-- Social links -->
+  <div class="sub" data-t="ev_social_t"></div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <a href="https://www.facebook.com/comune.villasimius" target="_blank" class="cta" style="background:#1877f2;color:#fff;margin-bottom:0">📘 Comune di Villasimius</a>
+    <a href="https://www.instagram.com/sciabecco_villasimius/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sciabecco Club</a>
+    <a href="https://www.instagram.com/skybeach_sardinia/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sky Beach Sardinia</a>
+  </div>
+</section>
+
+<!-- ═══ MAPPA ═══ -->
+<section id="mappa" class="sec">
+  <div class="ey" data-t="map_ey"></div>
+  <div class="st" data-t="map_title"></div>
+  <div class="hl" style="margin-bottom:14px">
+    <div class="hlt" data-t="map_waste_t"></div>
+    <div class="hlb" data-t="map_waste_b"></div>
+  </div>
+  <div style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh)">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=9.5293%2C39.1281%2C9.5393%2C39.1361&layer=mapnik&marker=39.132137%2C9.534307"
+      width="100%" height="280" frameborder="0" style="display:block"
+      title="Punto raccolta differenziata"></iframe>
+  </div>
+  <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-secondary" style="border:1px solid rgba(184,169,154,.4)">🗺 <span data-t="map_open_gmaps"></span></a>
+
+  <div class="sub" data-t="map_key_places"></div>
+  <div class="card">
+    <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · <span data-t="map_home_v"></span></div></div></div>
+    <div class="ir"><div class="iric">🗑</div><div><div class="irl" data-t="map_waste_point"></div><div class="irv" data-t="map_waste_point_v"></div></div></div>
+    <div class="ir"><div class="iric">🏖</div><div><div class="irl" data-t="map_beach"></div><div class="irv">Is Traias / Porto Luna · 250m</div></div></div>
+    <div class="ir"><div class="iric">🛒</div><div><div class="irl" data-t="map_super"></div><div class="irv">Eurospin · <span data-t="map_super_v"></span></div></div></div>
+  </div>
 </section>
 
 <script src="app.js"></script>
