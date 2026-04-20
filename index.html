@@ -14,6 +14,7 @@
 <meta property="og:url" content="https://casa-adele.vercel.app"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -477,13 +478,19 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 <section id="mappa" class="sec">
   <div class="ey" data-t="map_ey"></div>
   <div class="st" data-t="map_title"></div>
-  <div style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh)">
-    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.5293%2C39.1281%2C9.5393%2C39.1361&layer=mapnik&marker=39.132137%2C9.534307" width="100%" height="300" frameborder="0" style="display:block" title="Punto raccolta differenziata"></iframe>
+
+  <!-- Mappa interattiva Leaflet -->
+  <div id="map-container" style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh);height:320px;background:#e8e0d8"></div>
+
+  <!-- Bottoni Google Maps -->
+  <div style="display:flex;gap:8px;margin-bottom:14px">
+    <a href="https://www.google.com/maps/place/Casa+Adele+Porto+Luna/@39.1326561,9.5354061,17z" target="_blank" class="cta" style="background:#4285f4;color:#fff;margin-bottom:0;flex:1;font-size:13px;padding:12px 8px">🏠 <span data-t="map_open_casa"></span></a>
+    <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-sec" style="margin-bottom:0;flex:1;font-size:13px;padding:12px 8px">🗑 <span data-t="map_open_waste"></span></a>
   </div>
-  <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-sec" style="border:1px solid rgba(184,169,154,.4)">🗺 <span data-t="map_open_gmaps"></span></a>
+
   <div class="sub" data-t="map_key_places"></div>
   <div class="card">
-    <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · Punta Molentis</div></div></div>
+    <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · Punta Molentis · <a href="https://www.google.com/maps/place/Casa+Adele+Porto+Luna/@39.1326561,9.5354061,17z" target="_blank" style="color:var(--sea);font-size:12px">Google Maps ↗</a></div></div></div>
     <div class="ir"><div class="iric">🗑</div><div><div class="irl" data-t="map_waste_point"></div><div class="irv" data-t="map_waste_point_v"></div></div></div>
     <div class="ir"><div class="iric">🏖</div><div><div class="irl" data-t="map_beach"></div><div class="irv">Is Traias / Porto Luna · 250m</div></div></div>
     <div class="ir"><div class="iric">🛒</div><div><div class="irl" data-t="map_super"></div><div class="irv">Eurospin · <span data-t="map_super_v"></span></div></div></div>
@@ -645,6 +652,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   </div>
 </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
