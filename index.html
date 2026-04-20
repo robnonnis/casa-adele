@@ -5,19 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
 <title>Casa Adele Porto Luna · Villasimius</title>
 <meta name="description" content="Guida ospiti Casa Adele Porto Luna — Villasimius, Sardegna."/>
-<!-- Open Graph -->
 <meta property="og:title" content="Casa Adele Porto Luna · Villasimius"/>
-<meta property="og:description" content="La tua casa sul mare a Villasimius — vista Is Traias, giardino privato, BBQ. Guida ospiti."/>
+<meta property="og:description" content="La tua casa sul mare a Villasimius — vista Is Traias, giardino privato, BBQ."/>
 <meta property="og:image" content="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://casa-adele.vercel.app"/>
-<meta property="og:locale" content="it_IT"/>
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Casa Adele Porto Luna · Villasimius"/>
-<meta name="twitter:description" content="La tua casa sul mare a Villasimius — vista Is Traias, giardino privato, BBQ."/>
 <meta name="twitter:image" content="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -28,15 +23,31 @@
 body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:560px;background:#1a3a4f;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 48px;overflow:hidden}
+.hero{position:relative;height:100svh;min-height:560px;background:#1a3a4f;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,40,.82) 0%,rgba(10,25,40,.35) 55%,rgba(10,25,40,.15) 100%);z-index:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,40,.88) 0%,rgba(10,25,40,.4) 50%,rgba(10,25,40,.1) 100%);z-index:1}
 .hero-eyebrow{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;position:relative;z-index:2}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,12vw,72px);font-weight:300;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:6px}
 .hero-title em{font-style:italic;color:rgba(255,255,255,.85)}
-.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.7);margin-bottom:28px;position:relative;z-index:2}
-.chips{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.7);margin-bottom:20px;position:relative;z-index:2}
+.chips{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2;margin-bottom:0}
 .chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#fff;font-size:12px;padding:6px 14px;border-radius:20px}
+
+/* WEATHER BANNER (inline in hero bottom) */
+.hero-weather{position:relative;z-index:2;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.15);margin:16px -24px 0;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hw-main{display:flex;align-items:center;gap:10px}
+.hw-icon{font-size:28px;line-height:1}
+.hw-temp{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#fff;line-height:1}
+.hw-desc{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.hw-stats{display:flex;gap:14px}
+.hw-stat{text-align:center}
+.hw-stat-v{font-size:13px;font-weight:500;color:#fff}
+.hw-stat-l{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em}
+.hw-forecast{display:flex;gap:8px}
+.hw-day{text-align:center;opacity:.8}
+.hw-day-n{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.04em}
+.hw-day-i{font-size:16px;line-height:1.2}
+.hw-day-t{font-size:11px;color:#fff;font-weight:500}
 
 /* LANG TOGGLE */
 .ltog{position:absolute;top:24px;right:24px;display:flex;gap:5px;z-index:10}
@@ -57,7 +68,6 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .sec{display:none;padding:24px 16px 80px;max-width:680px;margin:0 auto;animation:fu .3s ease}
 .sec.active{display:block}
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
 .ey{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:7px}
 .st{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:18px}
 .st em{font-style:italic}
@@ -66,11 +76,10 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .div{width:34px;height:1px;background:var(--terra);opacity:.5;margin:13px 0}
 
 /* CARD */
-.card{background:#fff;border-radius:var(--r);padding:15px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
+.card{background:#fff;border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
 .ci{font-size:21px;margin-bottom:7px}
 .ct{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;margin-bottom:4px;color:var(--dark)}
 .cb{font-size:13px;font-weight:300;line-height:1.65;color:var(--mid)}
-
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:10px}
 .g2 .card{margin-bottom:0}
 
@@ -100,7 +109,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .pa{font-size:11px;color:var(--soft);margin-top:3px}
 
 /* SUB */
-.sub{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--dark);margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+.sub{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--dark);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
 .sub::after{content:'';flex:1;height:1px;background:rgba(184,169,154,.4)}
 
 /* AMENITY */
@@ -131,9 +140,10 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 /* CTA */
 .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:50px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:none;text-decoration:none;transition:all .2s;margin-bottom:9px}
 .ctawa{background:#25D366;color:#fff}
+.cta-sec{background:var(--sand);color:var(--dark);border:1px solid rgba(184,169,154,.4)}
 
 /* GALLERY */
-.gal{position:relative;width:calc(100% + 30px);margin:-15px -15px 14px;border-radius:var(--r) var(--r) 0 0;overflow:hidden;aspect-ratio:16/9;background:#e8e0d8}
+.gal{position:relative;width:calc(100% + 32px);margin:-16px -16px 14px;border-radius:var(--r) var(--r) 0 0;overflow:hidden;aspect-ratio:16/9;background:#e8e0d8}
 .gal-track{display:flex;height:100%;transition:transform .35s ease}
 .gal-slide{flex-shrink:0;width:100%;height:100%;object-fit:cover}
 .gal-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.35);border:none;color:#fff;font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;backdrop-filter:blur(4px)}
@@ -142,19 +152,35 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .gal-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px}
 .gal-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .2s}
 .gal-dot.on{background:#fff}
-.gal-single{pointer-events:none}
-.gal-single .gal-btn{display:none}
-.gal-single .gal-dots{display:none}
+.gal-single .gal-btn,.gal-single .gal-dots{display:none}
+
+/* CHECKLIST */
+.chk-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(184,169,154,.15);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.chk-item:last-child{border-bottom:none}
+.chk-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:2px solid rgba(184,169,154,.5);display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px}
+.chk-item.done .chk-box{background:var(--green);border-color:var(--green)}
+.chk-item.done .chk-box::after{content:'✓';color:#fff;font-size:13px;font-weight:600}
+.chk-item.done .chk-text{text-decoration:line-through;color:var(--soft)}
+.chk-text{font-size:14px;font-weight:300;color:var(--dark);line-height:1.5}
+.chk-text strong{display:block;font-weight:500;font-size:13px;margin-bottom:1px}
+.chk-reset{background:none;border:1px solid rgba(184,169,154,.4);color:var(--mid);font-family:'Jost',sans-serif;font-size:12px;padding:8px 16px;border-radius:20px;cursor:pointer;width:100%;margin-top:12px}
+
+/* WIFI BLUR */
+.wifi-pass-wrap{display:flex;align-items:center;gap:8px}
+.wifi-val{font-size:15px;font-weight:500;color:var(--dark);letter-spacing:.05em;filter:blur(5px);transition:filter .3s;user-select:none}
+.wifi-val.shown{filter:none;user-select:text}
+.wifi-reveal{background:none;border:1px solid rgba(184,169,154,.5);color:var(--mid);font-family:'Jost',sans-serif;font-size:11px;padding:4px 10px;border-radius:12px;cursor:pointer}
+
+/* WASTE BADGE */
+.waste-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.waste-item{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:300;color:var(--mid);padding:7px 10px;background:var(--sand);border-radius:8px}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <img class="hero-bg"
-    src="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg"
-    alt="Casa Adele — vista mare Porto Luna"
-    fetchpriority="high">
+  <img class="hero-bg" src="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg" alt="Casa Adele — vista mare Porto Luna" fetchpriority="high"/>
   <div class="hero-overlay"></div>
   <div class="ltog">
     <button class="lbtn active" data-lang="it">IT</button>
@@ -171,6 +197,21 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <span class="chip">🔥 BBQ</span>
     <span class="chip">👨‍👩‍👧‍👦 <span data-t="chip_guests"></span></span>
   </div>
+  <!-- METEO BANNER -->
+  <div class="hero-weather" id="hero-weather">
+    <div class="hw-main">
+      <div class="hw-icon" id="hw-icon">⏳</div>
+      <div>
+        <div class="hw-temp" id="hw-temp">--°</div>
+        <div class="hw-desc" id="hw-desc" data-t="w_loading"></div>
+      </div>
+    </div>
+    <div class="hw-stats">
+      <div class="hw-stat"><div class="hw-stat-v" id="hw-wind">--</div><div class="hw-stat-l" data-t="w_wind"></div></div>
+      <div class="hw-stat"><div class="hw-stat-v" style="color:#7ecef4" id="hw-sea">--</div><div class="hw-stat-l" data-t="w_sea"></div></div>
+    </div>
+    <div class="hw-forecast" id="hw-forecast"></div>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -183,15 +224,15 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   </div>
   <div class="nav-row">
     <button class="nbtn" data-section="zona"><span class="ni">🍽</span><span class="nl" data-t="nav_area"></span></button>
-    <button class="nbtn" data-section="regole"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
-    <button class="nbtn" data-section="dintorni"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
-    <button class="nbtn" data-section="contatti"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
+    <button class="nbtn" data-section="eventi"><span class="ni">🎉</span><span class="nl" data-t="nav_events"></span></button>
+    <button class="nbtn" data-section="info"><span class="ni">ℹ️</span><span class="nl" data-t="nav_info"></span></button>
+    <button class="nbtn" data-section="mappa"><span class="ni">📍</span><span class="nl" data-t="nav_map"></span></button>
   </div>
   <div class="nav-row">
-    <button class="nbtn" data-section="info"><span class="ni">ℹ️</span><span class="nl" data-t="nav_info"></span></button>
-    <button class="nbtn" data-section="meteo"><span class="ni">⛅</span><span class="nl" data-t="nav_weather"></span></button>
-    <button class="nbtn" data-section="eventi"><span class="ni">🎉</span><span class="nl" data-t="nav_events"></span></button>
-    <button class="nbtn" data-section="mappa"><span class="ni">📍</span><span class="nl" data-t="nav_map"></span></button>
+    <button class="nbtn" data-section="regole"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
+    <button class="nbtn" data-section="checkout"><span class="ni">✅</span><span class="nl" data-t="nav_checkout"></span></button>
+    <button class="nbtn" data-section="dintorni"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
+    <button class="nbtn" data-section="contatti"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
   </div>
 </nav>
 
@@ -215,37 +256,26 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 <section id="casa" class="sec">
   <div class="ey" data-t="house_ey"></div>
   <div class="st" data-t="house_title"></div>
-
-  <!-- Soggiorno & Cucina -->
   <div class="card">
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/5fc2548e-b8c7-4716-9d79-48db0bcbc8c1_nltzwj.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/60fc6205-9dd4-4980-bf24-39852d9aa49f_bjrodm.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365604/3eed81c1-0454-4173-8f9b-9ba6e1988165_ovjl6n.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365605/a4664094-eb5c-4f39-9562-bbb3373b2a30_rgpc3s.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365607/0726fa91-4733-416a-9cb4-a56bc4f7e925_bbzvtb.jpg"]'></div>
     <div class="ci">🪴</div><div class="ct" data-t="h_c1t"></div><div class="cb" data-t="h_c1b"></div>
   </div>
-
-  <!-- Camera matrimoniale -->
   <div class="card">
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/575c8896-a1a8-4c84-9213-6bc17e9bcc35_wfsuac.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776367377/91639589-0a3e-4d57-9849-0b07c90c43c4_umbnju.jpg"]'></div>
     <div class="ci">🌙</div><div class="ct" data-t="h_c3t"></div><div class="cb" data-t="h_c3b"></div>
   </div>
-
-  <!-- Cameretta piano terra -->
   <div class="card">
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365607/1314ee03-e8e3-4719-8892-f9d826f2d858_zniivz.jpg"]'></div>
     <div class="ci">🛏</div><div class="ct" data-t="h_c2t"></div><div class="cb" data-t="h_c2b"></div>
   </div>
-
-  <!-- Giardino & BBQ -->
   <div class="card">
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/f2b2da83-72a8-4110-a24a-4e6107f060af_rg41bi.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365606/e4933759-d5db-4c0a-9c37-02e41d631505_b67w68.jpg","https://res.cloudinary.com/dovpg47yh/image/upload/v1776365608/d58590cf-f5b7-4f04-8692-e7e144a304fa_mpusm3.jpg"]'></div>
     <div class="ci">🌿</div><div class="ct" data-t="h_c4t"></div><div class="cb" data-t="h_c4b"></div>
   </div>
-
-  <!-- Bagno -->
   <div class="card">
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/e3050c6d-d585-4246-affd-0374876d612d_yobkhp.jpg"]'></div>
     <div class="ci">🚿</div><div class="ct" data-t="h_c5t"></div><div class="cb" data-t="h_c5b"></div>
   </div>
-
 </section>
 
 <!-- ═══ SPIAGGE ═══ -->
@@ -304,21 +334,12 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
       <div class="ai"><span>🩹</span><span data-t="am_firstaid"></span></div>
     </div>
   </div>
-  <div class="eco">
-    <div class="ecot" data-t="eco_t"></div>
-    <div class="ecoi">
-      <div class="ecor"><span>♨️</span><span data-t="eco_1"></span></div>
-      <div class="ecor"><span>💡</span><span data-t="eco_2"></span></div>
-      <div class="ecor"><span>♻️</span><span data-t="eco_3"></span></div>
-    </div>
-  </div>
 </section>
 
 <!-- ═══ ZONA ═══ -->
 <section id="zona" class="sec">
   <div class="ey" data-t="zona_ey"></div>
   <div class="st" data-t="zona_title"></div>
-
   <div class="sub" data-t="zona_rest"></div>
   <div class="pc"><div class="pe">🦞</div><div class="pi"><div class="pn">Sa Tankitta</div><span class="pt tr" data-t="tag_seafood"></span><div class="pd" data-t="z_satankitta"></div><div class="pa">📍 Via Roma · Villasimius</div></div></div>
   <div class="pc"><div class="pe">⛵</div><div class="pi"><div class="pn">Ristorante La Vela</div><span class="pt tr" data-t="tag_seafood_pizza"></span><div class="pd" data-t="z_lavela"></div><div class="pa">📍 Via degli Oleandri 12 · ☎ 392 8780232</div></div></div>
@@ -327,19 +348,135 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="pc"><div class="pe">🍕</div><div class="pi"><div class="pn">La Lanterna</div><span class="pt tr" data-t="tag_sardinian_pizza"></span><div class="pd" data-t="z_lanterna"></div><div class="pa">📍 Via Roma 64 · ☎ 070 790013</div></div></div>
   <div class="pc"><div class="pe">🥩</div><div class="pi"><div class="pn">B-Steak Braceria</div><span class="pt tr" data-t="tag_meat"></span><div class="pd" data-t="z_bsteak"></div><div class="pa">📍 Via del Mare 62 · ☎ 339 6194547</div></div></div>
   <div class="pc"><div class="pe">🌾</div><div class="pi"><div class="pn">Agriturismo Sa Bingia</div><span class="pt tr" data-t="tag_sardinian"></span><div class="pd" data-t="z_sabingia"></div><div class="pa">📍 Viale dei Carrubi 5 · ☎ 070 791332</div></div></div>
-
   <div class="sub" data-t="zona_night"></div>
   <div class="pc"><div class="pe">🍷</div><div class="pi"><div class="pn">Baccusardus Wine Bar</div><span class="pt tb" data-t="tag_winebar"></span><div class="pd" data-t="z_baccus"></div><div class="pa">📍 Via del Mare 65 · ☎ 347 6214778</div></div></div>
   <div class="pc"><div class="pe">🧉</div><div class="pi"><div class="pn">El Peyote</div><span class="pt tb" data-t="tag_cocktail"></span><div class="pd" data-t="z_peyote"></div><div class="pa">📍 Centro Villasimius</div></div></div>
   <div class="pc"><div class="pe">🎵</div><div class="pi"><div class="pn">Sciabecco Summer Club</div><span class="pt tc" data-t="tag_club"></span><div class="pd" data-t="z_sciabecco"></div><div class="pa">📍 Via Cagliari 21/A · ☎ 070 791512</div></div></div>
   <div class="pc"><div class="pe">🌙</div><div class="pi"><div class="pn">Sky Beach Sardegna</div><span class="pt tc" data-t="tag_club2"></span><div class="pd" data-t="z_skybeach"></div><div class="pa">📍 Via Cagliari 17 · Loc. Santa Maria</div></div></div>
   <div class="pc"><div class="pe">🌴</div><div class="pi"><div class="pn">Lagoon Club</div><span class="pt tc" data-t="tag_club3"></span><div class="pd" data-t="z_lagoon"></div><div class="pa">📍 <span data-t="z_lagoon_addr"></span></div></div></div>
-  <div class="hl"><div class="hlt" data-t="z_viadelmare_t"></div><div class="hlb" data-t="z_viadelmare_b"></div></div>
-
   <div class="sub" data-t="zona_super"></div>
   <div class="pc"><div class="pe">🟢</div><div class="pi"><div class="pn">Eurospin</div><span class="pt ts" data-t="tag_discount"></span><div class="pd" data-t="z_eurospin"></div><div class="pa">📍 Via Carducci / Via Su Pranu · ☎ 070 790427</div></div></div>
   <div class="pc"><div class="pe">🔴</div><div class="pi"><div class="pn">Conad City</div><span class="pt ts" data-t="tag_supermarket"></span><div class="pd" data-t="z_conad"></div><div class="pa">📍 Via Raffaello · ☎ 070 7928024</div></div></div>
   <div class="pc"><div class="pe">🏪</div><div class="pi"><div class="pn">Dacla Supermercati</div><span class="pt ts" data-t="tag_supermarket"></span><div class="pd" data-t="z_dacla"></div><div class="pa">📍 Via Pascoli · Villasimius</div></div></div>
+</section>
+
+<!-- ═══ EVENTI ═══ -->
+<section id="eventi" class="sec">
+  <div class="ey" data-t="eventi_ey"></div>
+  <div class="st" data-t="eventi_title"></div>
+  <div class="hl" style="margin-bottom:16px">
+    <div class="hlt" data-t="ev_live_t"></div>
+    <div class="hlb" data-t="ev_live_b"></div>
+  </div>
+  <div id="ai-events-container">
+    <div style="text-align:center;padding:20px;color:var(--mid);font-size:13px" id="ai-events-loading" data-t="ev_loading"></div>
+  </div>
+  <div class="sub" data-t="ev_fixed_title"></div>
+  <div class="pc"><div class="pe">🎆</div><div class="pi"><div class="pn" data-t="ev1_t"></div><span class="pt tr" data-t="ev1_date"></span><div class="pd" data-t="ev1_b"></div></div></div>
+  <div class="pc"><div class="pe">🎵</div><div class="pi"><div class="pn" data-t="ev2_t"></div><span class="pt tb" data-t="ev2_date"></span><div class="pd" data-t="ev2_b"></div></div></div>
+  <div class="pc"><div class="pe">🎭</div><div class="pi"><div class="pn" data-t="ev3_t"></div><span class="pt tb" data-t="ev3_date"></span><div class="pd" data-t="ev3_b"></div></div></div>
+  <div class="pc"><div class="pe">🏊</div><div class="pi"><div class="pn" data-t="ev4_t"></div><span class="pt ts" data-t="ev4_date"></span><div class="pd" data-t="ev4_b"></div></div></div>
+  <div class="pc"><div class="pe">🍷</div><div class="pi"><div class="pn" data-t="ev5_t"></div><span class="pt tr" data-t="ev5_date"></span><div class="pd" data-t="ev5_b"></div></div></div>
+  <div class="sub" data-t="ev_social_t"></div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <a href="https://www.facebook.com/comune.villasimius" target="_blank" class="cta" style="background:#1877f2;color:#fff;margin-bottom:0">📘 Comune di Villasimius</a>
+    <a href="https://www.instagram.com/sciabecco_villasimius/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sciabecco Club</a>
+    <a href="https://www.instagram.com/skybeach_sardinia/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sky Beach Sardinia</a>
+  </div>
+</section>
+
+<!-- ═══ INFO ═══ -->
+<section id="info" class="sec">
+  <div class="ey" data-t="info_ey"></div>
+  <div class="st" data-t="info_title"></div>
+
+  <!-- WiFi -->
+  <div class="card">
+    <div class="ci">📶</div>
+    <div class="ct" data-t="info_wifi_t"></div>
+    <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
+      <div class="iric">📡</div>
+      <div><div class="irl" data-t="info_wifi_name_l"></div><div class="irv">CasaAdele_WiFi</div></div>
+    </div>
+    <div class="ir" style="padding:10px 0">
+      <div class="iric">🔑</div>
+      <div style="flex:1">
+        <div class="irl" data-t="info_wifi_pass_l"></div>
+        <div class="wifi-pass-wrap">
+          <div class="wifi-val" id="wifi-pass">CasaAdele2024!</div>
+          <button class="wifi-reveal" id="wifi-reveal" data-t="info_wifi_show"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check-in / Check-out -->
+  <div class="card">
+    <div class="ci">🗝</div>
+    <div class="ct" data-t="info_checkin_t"></div>
+    <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
+      <div class="iric">🟢</div>
+      <div><div class="irl">Check-in</div><div class="irv" data-t="info_checkin_v"></div></div>
+    </div>
+    <div class="ir" style="padding:10px 0">
+      <div class="iric">🔴</div>
+      <div><div class="irl">Check-out</div><div class="irv" data-t="info_checkout_v"></div></div>
+    </div>
+  </div>
+
+  <!-- Raccolta differenziata -->
+  <div class="card">
+    <div class="ci">♻️</div>
+    <div class="ct" data-t="info_waste_t"></div>
+    <div class="cb" data-t="info_waste_b"></div>
+    <div class="hl" style="margin:12px 0 0;background:linear-gradient(135deg,#fff8e8,#fff3d0);border-left-color:#e6a817">
+      <div class="hlt" style="color:#9a6d00" data-t="info_waste_time_t"></div>
+      <div class="hlb" style="color:#7a5500" data-t="info_waste_time_b"></div>
+    </div>
+    <div class="ct" style="margin-top:12px;font-size:13px" data-t="info_waste_types_t"></div>
+    <div class="waste-grid">
+      <div class="waste-item"><span>🟤</span><span data-t="wt_organic"></span></div>
+      <div class="waste-item"><span>🔵</span><span data-t="wt_paper"></span></div>
+      <div class="waste-item"><span>🟡</span><span data-t="wt_plastic"></span></div>
+      <div class="waste-item"><span>🟢</span><span data-t="wt_glass"></span></div>
+      <div class="waste-item"><span>⚫</span><span data-t="wt_mixed"></span></div>
+    </div>
+    <div style="margin-top:10px;font-size:12px;font-weight:300;color:var(--mid)" data-t="info_waste_note"></div>
+    <button class="cta-sec" style="width:100%;margin-top:12px;padding:10px;border-radius:20px;font-family:Jost,sans-serif;font-size:12px;cursor:pointer" onclick="document.querySelector('[data-section=mappa]').click()">🗺 <span data-t="info_waste_map_link"></span></button>
+  </div>
+
+  <!-- Contatti host -->
+  <div class="card">
+    <div class="ci">👥</div>
+    <div class="ct" data-t="info_host_t"></div>
+    <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
+      <div class="iric">👩</div>
+      <div><div class="irl" data-t="c_daniela_l"></div><div class="irv">+39 346 622 5194</div></div>
+    </div>
+    <div class="ir" style="padding:10px 0">
+      <div class="iric">👨</div>
+      <div><div class="irl" data-t="c_egidio_l"></div><div class="irv">+39 340 837 9789</div></div>
+    </div>
+  </div>
+  <a class="cta ctawa" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank" id="wa-daniela">💬 WhatsApp Daniela</a>
+  <a class="cta ctawa" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank" id="wa-egidio">💬 WhatsApp Egidio</a>
+</section>
+
+<!-- ═══ MAPPA ═══ -->
+<section id="mappa" class="sec">
+  <div class="ey" data-t="map_ey"></div>
+  <div class="st" data-t="map_title"></div>
+  <div style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh)">
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=9.5293%2C39.1281%2C9.5393%2C39.1361&layer=mapnik&marker=39.132137%2C9.534307" width="100%" height="300" frameborder="0" style="display:block" title="Punto raccolta differenziata"></iframe>
+  </div>
+  <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-sec" style="border:1px solid rgba(184,169,154,.4)">🗺 <span data-t="map_open_gmaps"></span></a>
+  <div class="sub" data-t="map_key_places"></div>
+  <div class="card">
+    <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · Punta Molentis</div></div></div>
+    <div class="ir"><div class="iric">🗑</div><div><div class="irl" data-t="map_waste_point"></div><div class="irv" data-t="map_waste_point_v"></div></div></div>
+    <div class="ir"><div class="iric">🏖</div><div><div class="irl" data-t="map_beach"></div><div class="irv">Is Traias / Porto Luna · 250m</div></div></div>
+    <div class="ir"><div class="iric">🛒</div><div><div class="irl" data-t="map_super"></div><div class="irv">Eurospin · <span data-t="map_super_v"></span></div></div></div>
+  </div>
 </section>
 
 <!-- ═══ REGOLE ═══ -->
@@ -356,6 +493,29 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="ri"><div class="riic">🏠</div><div class="rit"><strong data-t="r7t"></strong><span data-t="r7b"></span></div></div>
   </div>
   <div class="hl"><div class="hlt" data-t="r_cancel_t"></div><div class="hlb" data-t="r_cancel_b"></div></div>
+</section>
+
+<!-- ═══ CHECKOUT CHECKLIST ═══ -->
+<section id="checkout" class="sec">
+  <div class="ey" data-t="co_ey"></div>
+  <div class="st" data-t="co_title"></div>
+  <p class="bod" data-t="co_intro"></p>
+  <div class="hl"><div class="hlt" data-t="co_time_t"></div><div class="hlb" data-t="co_time_b"></div></div>
+  <div class="card" id="checklist-card">
+    <div class="chk-item" data-key="co1"><div class="chk-box"></div><div class="chk-text"><strong data-t="co1t"></strong><span data-t="co1b"></span></div></div>
+    <div class="chk-item" data-key="co2"><div class="chk-box"></div><div class="chk-text"><strong data-t="co2t"></strong><span data-t="co2b"></span></div></div>
+    <div class="chk-item" data-key="co3"><div class="chk-box"></div><div class="chk-text"><strong data-t="co3t"></strong><span data-t="co3b"></span></div></div>
+    <div class="chk-item" data-key="co4"><div class="chk-box"></div><div class="chk-text"><strong data-t="co4t"></strong><span data-t="co4b"></span></div></div>
+    <div class="chk-item" data-key="co5"><div class="chk-box"></div><div class="chk-text"><strong data-t="co5t"></strong><span data-t="co5b"></span></div></div>
+    <div class="chk-item" data-key="co6"><div class="chk-box"></div><div class="chk-text"><strong data-t="co6t"></strong><span data-t="co6b"></span></div></div>
+    <div class="chk-item" data-key="co7"><div class="chk-box"></div><div class="chk-text"><strong data-t="co7t"></strong><span data-t="co7b"></span></div></div>
+    <div class="chk-item" data-key="co8"><div class="chk-box"></div><div class="chk-text"><strong data-t="co8t"></strong><span data-t="co8b"></span></div></div>
+    <button class="chk-reset" id="chk-reset" data-t="co_reset"></button>
+  </div>
+  <div class="hl" id="co-done-msg" style="display:none;background:linear-gradient(135deg,#edf4ed,#ddeedd);border-left-color:var(--green)">
+    <div class="hlt" style="color:var(--green)" data-t="co_done_t"></div>
+    <div class="hlb" style="color:#3a5a3a" data-t="co_done_b"></div>
+  </div>
 </section>
 
 <!-- ═══ DINTORNI ═══ -->
@@ -380,186 +540,9 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="ir"><div class="iric">📍</div><div><div class="irl" data-t="c_addr_l"></div><div class="irv">Porto Luna, Punta Molentis<br>Villasimius (CA), Sardegna</div></div></div>
     <div class="ir"><div class="iric">🔑</div><div><div class="irl">CIN</div><div class="irv">IT111105C2000U1092</div></div></div>
   </div>
-  <a class="cta ctawa" id="wa-daniela" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Daniela</a>
-  <a class="cta ctawa" id="wa-egidio" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Egidio</a>
+  <a class="cta ctawa" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Daniela</a>
+  <a class="cta ctawa" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Egidio</a>
   <div class="hl" style="margin-top:12px"><div class="hlt" data-t="c_sos_t"></div><div class="hlb" data-t="c_sos_b"></div></div>
-</section>
-
-<!-- ═══ INFO PRATICHE ═══ -->
-<section id="info" class="sec">
-  <div class="ey" data-t="info_ey"></div>
-  <div class="st" data-t="info_title"></div>
-
-  <!-- WiFi -->
-  <div class="card">
-    <div class="ci">📶</div>
-    <div class="ct" data-t="info_wifi_t"></div>
-    <div class="ir" style="border-bottom:1px solid rgba(184,169,154,.2);padding:10px 0">
-      <div class="iric">📡</div>
-      <div><div class="irl" data-t="info_wifi_name_l"></div><div class="irv" id="wifi-name" style="font-size:16px;font-weight:500;letter-spacing:.05em">CasaAdele_WiFi</div></div>
-    </div>
-    <div class="ir" style="padding:10px 0">
-      <div class="iric">🔐</div>
-      <div style="flex:1"><div class="irl" data-t="info_wifi_pass_l"></div>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div class="irv" id="wifi-pass" style="font-size:16px;font-weight:500;letter-spacing:.08em;filter:blur(5px);transition:.3s" id="wpass">••••••••••</div>
-          <button id="wifi-reveal" style="background:var(--terra);border:none;color:#fff;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;cursor:pointer" data-t="info_wifi_show"></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Raccolta differenziata -->
-  <div class="card">
-    <div class="ci">♻️</div>
-    <div class="ct" data-t="info_waste_t"></div>
-    <div class="cb" style="margin-bottom:12px" data-t="info_waste_b"></div>
-    <div class="hl" style="margin-bottom:12px">
-      <div class="hlt">🕘 <span data-t="info_waste_time_t"></span></div>
-      <div class="hlb" data-t="info_waste_time_b"></div>
-    </div>
-    <div style="background:#f0f7f0;border-radius:10px;padding:12px;border:1px solid rgba(90,154,90,.2)">
-      <div style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px" data-t="info_waste_types_t"></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-        <div class="ai" style="background:#fff"><span>🟡</span><span data-t="wt_organic"></span></div>
-        <div class="ai" style="background:#fff"><span>🔵</span><span data-t="wt_paper"></span></div>
-        <div class="ai" style="background:#fff"><span>🟡</span><span data-t="wt_plastic"></span></div>
-        <div class="ai" style="background:#fff"><span>🟢</span><span data-t="wt_glass"></span></div>
-        <div class="ai" style="background:#fff"><span>⚫</span><span data-t="wt_mixed"></span></div>
-      </div>
-    </div>
-    <div style="margin-top:12px;font-size:12px;font-weight:300;color:var(--mid)" data-t="info_waste_note"></div>
-  </div>
-
-  <!-- Check-in/out -->
-  <div class="card">
-    <div class="ci">🗝</div>
-    <div class="ct" data-t="info_checkin_t"></div>
-    <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
-      <div class="iric">🟢</div>
-      <div><div class="irl">Check-in</div><div class="irv" data-t="info_checkin_v"></div></div>
-    </div>
-    <div class="ir" style="padding:10px 0">
-      <div class="iric">🔴</div>
-      <div><div class="irl">Check-out</div><div class="irv" data-t="info_checkout_v"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ METEO & EVENTI ═══ -->
-<section id="meteo" class="sec">
-  <div class="ey" data-t="meteo_ey"></div>
-  <div class="st" data-t="meteo_title"></div>
-
-  <!-- Meteo live -->
-  <div class="card" id="weather-card">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-      <div style="font-size:48px;line-height:1" id="w-icon">⏳</div>
-      <div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--dark);line-height:1" id="w-temp">--°</div>
-        <div style="font-size:13px;font-weight:300;color:var(--mid)" id="w-desc">Caricamento...</div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px">
-      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
-        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_humidity"></div>
-        <div style="font-size:15px;font-weight:500;color:var(--dark)" id="w-humidity">--</div>
-      </div>
-      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
-        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_wind"></div>
-        <div style="font-size:15px;font-weight:500;color:var(--dark)" id="w-wind">--</div>
-      </div>
-      <div style="background:var(--sand);border-radius:8px;padding:8px;text-align:center">
-        <div style="font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px" data-t="w_sea"></div>
-        <div style="font-size:15px;font-weight:500;color:var(--sea)" id="w-sea">--</div>
-      </div>
-    </div>
-    <div style="font-size:11px;color:var(--soft);margin-top:10px;text-align:right" id="w-updated"></div>
-  </div>
-
-  <!-- Previsioni 5 giorni -->
-  <div id="forecast-row" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px"></div>
-</section>
-
-<!-- ═══ EVENTI ═══ -->
-<section id="eventi" class="sec">
-  <div class="ey" data-t="eventi_ey"></div>
-  <div class="st" data-t="eventi_title"></div>
-
-  <!-- AI-powered live events -->
-  <div class="hl" style="margin-bottom:16px">
-    <div class="hlt" data-t="ev_live_t"></div>
-    <div class="hlb" data-t="ev_live_b"></div>
-  </div>
-  <div id="ai-events-container">
-    <div style="text-align:center;padding:20px;color:var(--mid);font-size:13px" id="ai-events-loading" data-t="ev_loading"></div>
-  </div>
-
-  <!-- Eventi fissi stagionali -->
-  <div class="sub" data-t="ev_fixed_title"></div>
-
-  <div class="pc"><div class="pe">🎆</div><div class="pi">
-    <div class="pn" data-t="ev1_t"></div>
-    <span class="pt tr" data-t="ev1_date"></span>
-    <div class="pd" data-t="ev1_b"></div>
-  </div></div>
-
-  <div class="pc"><div class="pe">🎵</div><div class="pi">
-    <div class="pn" data-t="ev2_t"></div>
-    <span class="pt tb" data-t="ev2_date"></span>
-    <div class="pd" data-t="ev2_b"></div>
-  </div></div>
-
-  <div class="pc"><div class="pe">🎭</div><div class="pi">
-    <div class="pn" data-t="ev3_t"></div>
-    <span class="pt tb" data-t="ev3_date"></span>
-    <div class="pd" data-t="ev3_b"></div>
-  </div></div>
-
-  <div class="pc"><div class="pe">🏊</div><div class="pi">
-    <div class="pn" data-t="ev4_t"></div>
-    <span class="pt ts" data-t="ev4_date"></span>
-    <div class="pd" data-t="ev4_b"></div>
-  </div></div>
-
-  <div class="pc"><div class="pe">🍷</div><div class="pi">
-    <div class="pn" data-t="ev5_t"></div>
-    <span class="pt tr" data-t="ev5_date"></span>
-    <div class="pd" data-t="ev5_b"></div>
-  </div></div>
-
-  <!-- Social links -->
-  <div class="sub" data-t="ev_social_t"></div>
-  <div style="display:flex;flex-direction:column;gap:8px">
-    <a href="https://www.facebook.com/comune.villasimius" target="_blank" class="cta" style="background:#1877f2;color:#fff;margin-bottom:0">📘 Comune di Villasimius</a>
-    <a href="https://www.instagram.com/sciabecco_villasimius/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sciabecco Club</a>
-    <a href="https://www.instagram.com/skybeach_sardinia/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sky Beach Sardinia</a>
-  </div>
-</section>
-
-<!-- ═══ MAPPA ═══ -->
-<section id="mappa" class="sec">
-  <div class="ey" data-t="map_ey"></div>
-  <div class="st" data-t="map_title"></div>
-  <div class="hl" style="margin-bottom:14px">
-    <div class="hlt" data-t="map_waste_t"></div>
-    <div class="hlb" data-t="map_waste_b"></div>
-  </div>
-  <div style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh)">
-    <iframe
-      src="https://www.openstreetmap.org/export/embed.html?bbox=9.5293%2C39.1281%2C9.5393%2C39.1361&layer=mapnik&marker=39.132137%2C9.534307"
-      width="100%" height="280" frameborder="0" style="display:block"
-      title="Punto raccolta differenziata"></iframe>
-  </div>
-  <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-secondary" style="border:1px solid rgba(184,169,154,.4)">🗺 <span data-t="map_open_gmaps"></span></a>
-
-  <div class="sub" data-t="map_key_places"></div>
-  <div class="card">
-    <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · <span data-t="map_home_v"></span></div></div></div>
-    <div class="ir"><div class="iric">🗑</div><div><div class="irl" data-t="map_waste_point"></div><div class="irv" data-t="map_waste_point_v"></div></div></div>
-    <div class="ir"><div class="iric">🏖</div><div><div class="irl" data-t="map_beach"></div><div class="irv">Is Traias / Porto Luna · 250m</div></div></div>
-    <div class="ir"><div class="iric">🛒</div><div><div class="irl" data-t="map_super"></div><div class="irv">Eurospin · <span data-t="map_super_v"></span></div></div></div>
-  </div>
 </section>
 
 <script src="app.js"></script>
