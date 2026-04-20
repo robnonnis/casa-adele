@@ -165,7 +165,18 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .chk-text strong{display:block;font-weight:500;font-size:13px;margin-bottom:1px}
 .chk-reset{background:none;border:1px solid rgba(184,169,154,.4);color:var(--mid);font-family:'Jost',sans-serif;font-size:12px;padding:8px 16px;border-radius:20px;cursor:pointer;width:100%;margin-top:12px}
 
-/* WIFI BLUR */
+/* REVIEW CARD */
+.rev-card{background:#fff;border-radius:var(--r);padding:18px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
+.rev-stars{color:#f4a629;font-size:15px;letter-spacing:1px;margin-bottom:8px}
+.rev-text{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;font-style:italic;line-height:1.65;color:var(--dark);margin-bottom:10px}
+.rev-footer{display:flex;align-items:center;justify-content:space-between}
+.rev-author{font-size:12px;font-weight:500;color:var(--mid)}
+.rev-platform{font-size:10px;font-weight:400;color:var(--soft);letter-spacing:.06em;text-transform:uppercase}
+.rev-score{display:inline-flex;align-items:center;gap:4px;background:var(--sea);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px}
+.cta-google{background:#4285f4;color:#fff}
+.cta-booking{background:#003580;color:#fff}
+.cta-airbnb{background:#ff5a5f;color:#fff}
+.rev-cta-wrap{display:flex;flex-direction:column;gap:8px;margin-top:4px}
 .wifi-pass-wrap{display:flex;align-items:center;gap:8px}
 .wifi-val{font-size:15px;font-weight:500;color:var(--dark);letter-spacing:.05em;filter:blur(5px);transition:filter .3s;user-select:none}
 .wifi-val.shown{filter:none;user-select:text}
@@ -231,7 +242,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="nav-row">
     <button class="nbtn" data-section="regole"><span class="ni">📋</span><span class="nl" data-t="nav_rules"></span></button>
     <button class="nbtn" data-section="checkout"><span class="ni">✅</span><span class="nl" data-t="nav_checkout"></span></button>
-    <button class="nbtn" data-section="dintorni"><span class="ni">🗺</span><span class="nl" data-t="nav_around"></span></button>
+    <button class="nbtn" data-section="recensioni"><span class="ni">⭐</span><span class="nl" data-t="nav_reviews"></span></button>
     <button class="nbtn" data-section="contatti"><span class="ni">💬</span><span class="nl" data-t="nav_contact"></span></button>
   </div>
 </nav>
@@ -396,14 +407,14 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="ct" data-t="info_wifi_t"></div>
     <div class="ir" style="padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)">
       <div class="iric">📡</div>
-      <div><div class="irl" data-t="info_wifi_name_l"></div><div class="irv">CasaAdele_WiFi</div></div>
+      <div><div class="irl" data-t="info_wifi_name_l"></div><div class="irv">Vodafone-E81428622</div></div>
     </div>
     <div class="ir" style="padding:10px 0">
       <div class="iric">🔑</div>
       <div style="flex:1">
         <div class="irl" data-t="info_wifi_pass_l"></div>
         <div class="wifi-pass-wrap">
-          <div class="wifi-val" id="wifi-pass">CasaAdele2024!</div>
+          <div class="wifi-val" id="wifi-pass">CasaAdele.15</div>
           <button class="wifi-reveal" id="wifi-reveal" data-t="info_wifi_show"></button>
         </div>
       </div>
@@ -543,6 +554,95 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <a class="cta ctawa" href="https://wa.me/393466225194?text=Ciao+Daniela%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Daniela</a>
   <a class="cta ctawa" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank">💬 WhatsApp Egidio</a>
   <div class="hl" style="margin-top:12px"><div class="hlt" data-t="c_sos_t"></div><div class="hlb" data-t="c_sos_b"></div></div>
+</section>
+
+<!-- ═══ RECENSIONI ═══ -->
+<section id="recensioni" class="sec">
+  <div class="ey" data-t="rev_ey"></div>
+  <div class="st" data-t="rev_title"></div>
+  <p class="bod" data-t="rev_intro"></p>
+
+  <!-- Score badge -->
+  <div class="card" style="display:flex;align-items:center;gap:16px;padding:18px">
+    <div style="text-align:center;flex-shrink:0">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--terra);line-height:1">9.2</div>
+      <div style="font-size:11px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase" data-t="rev_score_label"></div>
+    </div>
+    <div style="flex:1">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--dark);margin-bottom:4px" data-t="rev_score_title"></div>
+      <div style="font-size:13px;font-weight:300;color:var(--mid)" data-t="rev_score_sub"></div>
+      <div style="color:#f4a629;font-size:18px;margin-top:6px">★★★★★</div>
+    </div>
+  </div>
+
+  <!-- Recensioni -->
+  <div class="sub" data-t="rev_sub_reviews"></div>
+
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev1_text"></div>
+    <div class="rev-footer">
+      <div>
+        <div class="rev-author" data-t="rev1_author"></div>
+        <div class="rev-platform">Booking.com</div>
+      </div>
+      <div class="rev-score">9.6</div>
+    </div>
+  </div>
+
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev2_text"></div>
+    <div class="rev-footer">
+      <div>
+        <div class="rev-author" data-t="rev2_author"></div>
+        <div class="rev-platform">Booking.com</div>
+      </div>
+      <div class="rev-score">9.2</div>
+    </div>
+  </div>
+
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev3_text"></div>
+    <div class="rev-footer">
+      <div>
+        <div class="rev-author" data-t="rev3_author"></div>
+        <div class="rev-platform">Holidu</div>
+      </div>
+      <div class="rev-score">9.4</div>
+    </div>
+  </div>
+
+  <div class="rev-card">
+    <div class="rev-stars">★★★★☆</div>
+    <div class="rev-text" data-t="rev4_text"></div>
+    <div class="rev-footer">
+      <div>
+        <div class="rev-author" data-t="rev4_author"></div>
+        <div class="rev-platform">Booking.com</div>
+      </div>
+      <div class="rev-score">8.8</div>
+    </div>
+  </div>
+
+  <!-- CTA lascia recensione -->
+  <div class="sub" data-t="rev_sub_cta"></div>
+  <p class="bod" data-t="rev_cta_intro"></p>
+
+  <div class="rev-cta-wrap">
+    <a href="INSERISCI_LINK_GOOGLE_BUSINESS" target="_blank" class="cta cta-google">
+      ⭐ <span data-t="rev_cta_google"></span>
+    </a>
+    <a href="https://www.booking.com/hotel/it/casa-adele-porto-luna.html" target="_blank" class="cta cta-booking">
+      🏨 <span data-t="rev_cta_booking"></span>
+    </a>
+  </div>
+
+  <div class="hl" style="margin-top:6px">
+    <div class="hlt" data-t="rev_thank_t"></div>
+    <div class="hlb" data-t="rev_thank_b"></div>
+  </div>
 </section>
 
 <script src="app.js"></script>
