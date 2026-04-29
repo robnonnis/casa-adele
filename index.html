@@ -19,65 +19,80 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{--sand:#f2ede6;--warm:#faf8f5;--terra:#c47a45;--sea:#3a7ca5;--dark:#2b2420;--mid:#6b5f58;--soft:#b8a99a;--green:#5a7a5a;--r:14px;--sh:0 4px 20px rgba(43,36,32,.10)}
+/* ══ PALETTE MARE ══ */
+:root{
+  --sand:#e8f4f8;        /* azzurro pallido — sfondo bottoni */
+  --warm:#f0f8fc;        /* celeste molto chiaro — sfondo pagina */
+  --terra:#1a7fa0;       /* blu-azzurro mare — primario */
+  --sea:#0e5c78;         /* blu profondo — accento */
+  --aqua:#00b4d8;        /* acquamarina vivace — highlight */
+  --dark:#0d2d3a;        /* quasi nero oceano */
+  --mid:#3d6878;         /* blu-grigio medio */
+  --soft:#7aafc0;        /* celeste soft */
+  --green:#2a8a6e;       /* verde acqua */
+  --r:14px;
+  --sh:0 4px 20px rgba(13,45,58,.10)
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:560px;background:#1a3a4f;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 0;overflow:hidden}
+.hero{position:relative;height:100svh;min-height:560px;background:#0d2d3a;display:flex;flex-direction:column;justify-content:flex-end;padding:0 24px 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,40,.88) 0%,rgba(10,25,40,.4) 50%,rgba(10,25,40,.1) 100%);z-index:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,30,45,.90) 0%,rgba(10,30,45,.4) 50%,rgba(10,30,45,.05) 100%);z-index:1}
 .hero-eyebrow{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;position:relative;z-index:2}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,12vw,72px);font-weight:300;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:6px}
-.hero-title em{font-style:italic;color:rgba(255,255,255,.85)}
-.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(255,255,255,.7);margin-bottom:20px;position:relative;z-index:2}
+.hero-title em{font-style:italic;color:rgba(180,230,255,.9)}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(180,230,255,.75);margin-bottom:20px;position:relative;z-index:2}
 .chips{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2;margin-bottom:0}
-.chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);color:#fff;font-size:12px;padding:6px 14px;border-radius:20px}
+.chip{background:rgba(0,180,216,.18);border:1px solid rgba(0,180,216,.4);backdrop-filter:blur(8px);color:#fff;font-size:12px;padding:6px 14px;border-radius:20px}
 
-/* WEATHER BANNER (inline in hero bottom) */
-.hero-weather{position:relative;z-index:2;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.15);margin:16px -24px 0;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+/* METEO BANNER */
+.hero-weather{position:relative;z-index:2;background:rgba(0,50,80,.35);backdrop-filter:blur(12px);border-top:1px solid rgba(0,180,216,.25);margin:16px -24px 0;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .hw-main{display:flex;align-items:center;gap:10px}
 .hw-icon{font-size:28px;line-height:1}
 .hw-temp{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#fff;line-height:1}
-.hw-desc{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.hw-desc{font-size:11px;color:rgba(180,230,255,.8);margin-top:2px}
 .hw-stats{display:flex;gap:14px}
 .hw-stat{text-align:center}
 .hw-stat-v{font-size:13px;font-weight:500;color:#fff}
-.hw-stat-l{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em}
+.hw-stat-l{font-size:9px;color:rgba(180,230,255,.6);text-transform:uppercase;letter-spacing:.06em}
 .hw-forecast{display:flex;gap:8px}
-.hw-day{text-align:center;opacity:.8}
-.hw-day-n{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.04em}
+.hw-day{text-align:center;opacity:.85}
+.hw-day-n{font-size:9px;color:rgba(180,230,255,.65);text-transform:uppercase;letter-spacing:.04em}
 .hw-day-i{font-size:16px;line-height:1.2}
 .hw-day-t{font-size:11px;color:#fff;font-weight:500}
 
 /* LANG TOGGLE */
 .ltog{position:absolute;top:24px;right:24px;display:flex;gap:5px;z-index:10}
-.lbtn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;padding:5px 10px;border-radius:16px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px)}
+.lbtn{background:rgba(0,50,80,.35);border:1px solid rgba(0,180,216,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;padding:5px 10px;border-radius:16px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px)}
 .lbtn.active{background:rgba(255,255,255,.92);color:var(--dark)}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,169,154,.3);padding:10px 12px 11px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(240,248,252,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(26,127,160,.18);padding:10px 12px 11px}
 .nav-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .nav-row+.nav-row{margin-top:6px}
-.nbtn{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--sand);border:1.5px solid transparent;border-radius:11px;padding:8px 3px 6px;cursor:pointer;transition:all .18s;font-family:'Jost',sans-serif;-webkit-tap-highlight-color:transparent}
+.nbtn{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--sand);border:1.5px solid transparent;border-radius:11px;padding:8px 3px 6px;cursor:pointer;transition:all .18s;font-family:'Jost',sans-serif;-webkit-tap-highlight-color:transparent;position:relative}
+.nbtn:active{transform:scale(.95)}
 .nbtn.active{background:var(--terra);border-color:var(--terra)}
-.ni{font-size:21px;line-height:1}
-.nl{font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--mid);white-space:nowrap}
+.nbtn .ni{font-size:21px;line-height:1}
+.nbtn .nl{font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--mid);white-space:nowrap}
 .nbtn.active .nl{color:#fff}
+.nbtn .badge-dot{position:absolute;top:5px;right:8px;width:7px;height:7px;border-radius:50%;background:#ff5a5f;border:1.5px solid var(--warm)}
 
-/* SECTIONS */
+/* SEZIONI */
 .sec{display:none;padding:24px 16px 80px;max-width:680px;margin:0 auto;animation:fu .3s ease}
 .sec.active{display:block}
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .ey{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:7px}
 .st{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:18px}
-.st em{font-style:italic}
+.st em{font-style:italic;color:var(--terra)}
 .intr{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;font-weight:300;line-height:1.7;color:var(--mid);margin-bottom:18px}
 .bod{font-size:14px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:12px}
 .div{width:34px;height:1px;background:var(--terra);opacity:.5;margin:13px 0}
 
 /* CARD */
-.card{background:#fff;border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
+.card{background:#fff;border-radius:var(--r);padding:16px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(26,127,160,.12)}
 .ci{font-size:21px;margin-bottom:7px}
 .ct{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;margin-bottom:4px;color:var(--dark)}
 .cb{font-size:13px;font-weight:300;line-height:1.65;color:var(--mid)}
@@ -85,54 +100,48 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .g2 .card{margin-bottom:0}
 
 /* HIGHLIGHT */
-.hl{background:linear-gradient(135deg,#fdf3e8,#f9ead6);border-radius:var(--r);padding:15px;margin-bottom:10px;border-left:3px solid var(--terra)}
+.hl{background:linear-gradient(135deg,#e8f6fb,#d0ecf7);border-radius:var(--r);padding:15px;margin-bottom:10px;border-left:3px solid var(--terra)}
 .hlt{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--terra);margin-bottom:5px}
-.hlb{font-size:13px;font-weight:300;line-height:1.65;color:#7a5c3a}
+.hlb{font-size:13px;font-weight:300;line-height:1.65;color:var(--mid)}
 
-/* BEACH */
-.bc{background:linear-gradient(135deg,#e8f4f9,#d0e9f4);border-radius:var(--r);padding:13px;margin-bottom:8px;border:1px solid rgba(90,154,191,.2)}
+/* SPIAGGE */
+.bc{background:linear-gradient(135deg,#ddf3fb,#bce8f7);border-radius:var(--r);padding:13px;margin-bottom:8px;border:1px solid rgba(0,180,216,.25)}
 .bch{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
 .bcn{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--sea)}
-.bcd{font-size:11px;font-weight:500;background:var(--sea);color:#fff;padding:3px 9px;border-radius:20px}
-.bcb{font-size:13px;font-weight:300;color:#3a5a72;line-height:1.5}
+.bcd{font-size:11px;font-weight:500;background:var(--terra);color:#fff;padding:3px 9px;border-radius:20px}
+.bcb{font-size:13px;font-weight:300;color:var(--mid);line-height:1.5}
 
-/* PLACE */
-.pc{background:#fff;border-radius:var(--r);padding:13px;margin-bottom:8px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2);display:flex;gap:11px}
+/* PLACE CARD */
+.pc{background:#fff;border-radius:var(--r);padding:13px;margin-bottom:8px;box-shadow:var(--sh);border:1px solid rgba(26,127,160,.12);display:flex;gap:11px}
 .pe{font-size:26px;flex-shrink:0;margin-top:1px}
 .pi{flex:1}
 .pn{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--dark);margin-bottom:3px}
 .pt{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.06em;padding:2px 7px;border-radius:7px;margin-bottom:3px}
-.tr{background:#fdf0e8;color:var(--terra)}
-.tb{background:#e8f4f9;color:var(--sea)}
+.tr{background:#ddf3fb;color:var(--sea)}
+.tb{background:#e0f5ea;color:var(--green)}
 .tc{background:#1a1a2e;color:#c4a0ff}
-.ts{background:#edf4ed;color:var(--green)}
+.ts{background:#e0f5ea;color:var(--green)}
 .pd{font-size:12px;font-weight:300;color:var(--mid);line-height:1.5}
 .pa{font-size:11px;color:var(--soft);margin-top:3px}
 
-/* SUB */
+/* SUB TITLE */
 .sub{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--dark);margin:20px 0 10px;display:flex;align-items:center;gap:8px}
-.sub::after{content:'';flex:1;height:1px;background:rgba(184,169,154,.4)}
+.sub::after{content:'';flex:1;height:1px;background:rgba(26,127,160,.2)}
 
 /* AMENITY */
 .ag{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .ai{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:300;color:var(--mid);padding:8px 10px;background:var(--sand);border-radius:8px}
 .ai span:first-child{font-size:14px}
 
-/* ECO */
-.eco{background:linear-gradient(135deg,#edf4ed,#ddeedd);border-radius:var(--r);padding:13px;margin-top:10px;border-left:3px solid var(--green)}
-.ecot{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:var(--green);margin-bottom:7px}
-.ecoi{display:flex;flex-direction:column;gap:5px}
-.ecor{font-size:12px;font-weight:300;color:#3a5a3a;display:flex;gap:7px}
-
 /* RULES */
-.ri{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(184,169,154,.2)}
+.ri{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(26,127,160,.12)}
 .ri:last-child{border-bottom:none}
 .riic{font-size:17px;flex-shrink:0}
 .rit{font-size:13px;font-weight:300;line-height:1.5;color:var(--mid)}
 .rit strong{display:block;font-weight:500;color:var(--dark);margin-bottom:1px}
 
 /* INFO ROW */
-.ir{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid rgba(184,169,154,.2)}
+.ir{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid rgba(26,127,160,.12)}
 .ir:last-child{border-bottom:none}
 .iric{font-size:17px;flex-shrink:0;width:22px}
 .irl{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:2px}
@@ -141,9 +150,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 /* CTA */
 .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border-radius:50px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:none;text-decoration:none;transition:all .2s;margin-bottom:9px}
 .ctawa{background:#25D366;color:#fff}
-.cta-sec{background:var(--sand);color:var(--dark);border:1px solid rgba(184,169,154,.4)}
-
-/* GALLERY */
+.cta-sec{background:var(--sand);color:var(--dark);border:1px solid rgba(26,127,160,.25)}
 .gal{position:relative;width:calc(100% + 32px);margin:-16px -16px 14px;border-radius:var(--r) var(--r) 0 0;overflow:hidden;aspect-ratio:16/9;background:#e8e0d8}
 .gal-track{display:flex;height:100%;transition:transform .35s ease}
 .gal-slide{flex-shrink:0;width:100%;height:100%;object-fit:cover}
@@ -154,38 +161,57 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .gal-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .2s}
 .gal-dot.on{background:#fff}
 .gal-single .gal-btn,.gal-single .gal-dots{display:none}
-
-/* CHECKLIST */
 .chk-item{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(184,169,154,.15);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .chk-item:last-child{border-bottom:none}
-.chk-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:2px solid rgba(184,169,154,.5);display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px}
-.chk-item.done .chk-box{background:var(--green);border-color:var(--green)}
+.chk-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:2px solid rgba(26,127,160,.3);display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px}
+.chk-item.done .chk-box{background:var(--terra);border-color:var(--terra)}
 .chk-item.done .chk-box::after{content:'✓';color:#fff;font-size:13px;font-weight:600}
 .chk-item.done .chk-text{text-decoration:line-through;color:var(--soft)}
 .chk-text{font-size:14px;font-weight:300;color:var(--dark);line-height:1.5}
 .chk-text strong{display:block;font-weight:500;font-size:13px;margin-bottom:1px}
-.chk-reset{background:none;border:1px solid rgba(184,169,154,.4);color:var(--mid);font-family:'Jost',sans-serif;font-size:12px;padding:8px 16px;border-radius:20px;cursor:pointer;width:100%;margin-top:12px}
-
-/* REVIEW CARD */
-.rev-card{background:#fff;border-radius:var(--r);padding:18px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(184,169,154,.2)}
+.chk-reset{background:none;border:1px solid rgba(26,127,160,.25);color:var(--mid);font-family:'Jost',sans-serif;font-size:12px;padding:8px 16px;border-radius:20px;cursor:pointer;width:100%;margin-top:12px}
+.rev-card{background:#fff;border-radius:var(--r);padding:18px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid rgba(26,127,160,.12)}
 .rev-stars{color:#f4a629;font-size:15px;letter-spacing:1px;margin-bottom:8px}
 .rev-text{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;font-style:italic;line-height:1.65;color:var(--dark);margin-bottom:10px}
 .rev-footer{display:flex;align-items:center;justify-content:space-between}
 .rev-author{font-size:12px;font-weight:500;color:var(--mid)}
 .rev-platform{font-size:10px;font-weight:400;color:var(--soft);letter-spacing:.06em;text-transform:uppercase}
-.rev-score{display:inline-flex;align-items:center;gap:4px;background:var(--sea);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px}
+.rev-score{display:inline-flex;align-items:center;gap:4px;background:var(--terra);color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px}
 .cta-google{background:#4285f4;color:#fff}
 .cta-booking{background:#003580;color:#fff}
-.cta-airbnb{background:#ff5a5f;color:#fff}
 .rev-cta-wrap{display:flex;flex-direction:column;gap:8px;margin-top:4px}
 .wifi-pass-wrap{display:flex;align-items:center;gap:8px}
 .wifi-val{font-size:15px;font-weight:500;color:var(--dark);letter-spacing:.05em;filter:blur(5px);transition:filter .3s;user-select:none}
 .wifi-val.shown{filter:none;user-select:text}
-.wifi-reveal{background:none;border:1px solid rgba(184,169,154,.5);color:var(--mid);font-family:'Jost',sans-serif;font-size:11px;padding:4px 10px;border-radius:12px;cursor:pointer}
-
-/* WASTE BADGE */
+.wifi-reveal{background:none;border:1px solid rgba(26,127,160,.3);color:var(--terra);font-family:'Jost',sans-serif;font-size:11px;padding:4px 10px;border-radius:12px;cursor:pointer}
 .waste-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
 .waste-item{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:300;color:var(--mid);padding:7px 10px;background:var(--sand);border-radius:8px}
+
+/* ── INSTAGRAM ── */
+.ig-banner{background:linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%);border-radius:var(--r);padding:22px 20px;margin-bottom:10px;color:#fff;position:relative;overflow:hidden}
+.ig-banner::before{content:'📸';position:absolute;top:-10px;right:10px;font-size:80px;opacity:.1}
+.ig-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ig-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;border:2px solid rgba(255,255,255,.4)}
+.ig-handle{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:.01em}
+.ig-sub{font-size:11px;opacity:.75;margin-top:1px;letter-spacing:.04em}
+.ig-body{font-size:14px;font-weight:300;line-height:1.65;margin-bottom:16px;opacity:.95}
+.ig-body strong{font-weight:600;display:block;margin-bottom:6px;font-size:15px}
+.ig-hashtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.ig-tag{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;letter-spacing:.02em}
+.ig-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.22);backdrop-filter:blur(8px);border:1.5px solid rgba(255,255,255,.5);color:#fff;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;padding:13px 18px;border-radius:25px;text-decoration:none;cursor:pointer;width:100%;transition:all .2s}
+.ig-cta:active{background:rgba(255,255,255,.35)}
+
+/* IG banner nella sezione recensioni — più compatto */
+.ig-mini{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border-radius:var(--r);padding:16px;margin-bottom:10px;color:#fff;display:flex;gap:12px;align-items:center}
+.ig-mini-icon{font-size:28px;flex-shrink:0}
+.ig-mini-text{flex:1;font-size:13px;font-weight:300;line-height:1.5;opacity:.95}
+.ig-mini-text strong{display:block;font-weight:600;font-size:14px;margin-bottom:2px}
+.ig-mini-btn{flex-shrink:0;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;padding:7px 12px;border-radius:20px;cursor:pointer;text-decoration:none;white-space:nowrap}
+
+/* Pill IG flottante */
+.ig-pill{position:fixed;bottom:20px;right:16px;z-index:200;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;border:none;border-radius:50px;padding:10px 16px 10px 12px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 4px 18px rgba(131,58,180,.45);display:flex;align-items:center;gap:7px;animation:pulse-ig 3s infinite;text-decoration:none}
+@keyframes pulse-ig{0%,100%{transform:scale(1);box-shadow:0 4px 18px rgba(131,58,180,.45)}50%{transform:scale(1.04);box-shadow:0 6px 24px rgba(253,29,29,.5)}}
+.ig-pill-x{background:rgba(0,0,0,.2);border:none;color:#fff;width:18px;height:18px;border-radius:50%;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:4px;flex-shrink:0;padding:0}
 </style>
 </head>
 <body>
@@ -209,7 +235,6 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <span class="chip">🔥 BBQ</span>
     <span class="chip">👨‍👩‍👧‍👦 <span data-t="chip_guests"></span></span>
   </div>
-  <!-- METEO BANNER -->
   <div class="hero-weather" id="hero-weather">
     <div class="hw-main">
       <div class="hw-icon" id="hw-icon">⏳</div>
@@ -248,7 +273,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   </div>
 </nav>
 
-<!-- ═══ BENVENUTO ═══ -->
+<!-- BENVENUTO -->
 <section id="benvenuto" class="sec active">
   <div class="ey" data-t="welcome_ey"></div>
   <div class="st" data-t="welcome_title"></div>
@@ -262,9 +287,34 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="card"><div class="ci">👨‍👩‍👧</div><div class="ct" data-t="w_c4t"></div><div class="cb" data-t="w_c4b"></div></div>
   </div>
   <div class="hl"><div class="hlt" data-t="w_loc_t"></div><div class="hlb" data-t="w_loc_b"></div></div>
+
+  <!-- INSTAGRAM CARD NELLA HOME -->
+  <div class="ig-banner">
+    <div class="ig-top">
+      <div class="ig-avatar">🏡</div>
+      <div>
+        <div class="ig-handle">@casaadele15</div>
+        <div class="ig-sub" data-t="ig_sub"></div>
+      </div>
+    </div>
+    <div class="ig-body">
+      <strong data-t="ig_home_title"></strong>
+      <span data-t="ig_home_body"></span>
+    </div>
+    <div class="ig-hashtags">
+      <span class="ig-tag">#casaadele15</span>
+      <span class="ig-tag">#villasimius</span>
+      <span class="ig-tag">#sardegna</span>
+      <span class="ig-tag">#portoluna</span>
+      <span class="ig-tag">#sardinialife</span>
+    </div>
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-cta">
+      📸 <span data-t="ig_cta_follow"></span>
+    </a>
+  </div>
 </section>
 
-<!-- ═══ LA CASA ═══ -->
+<!-- LA CASA -->
 <section id="casa" class="sec">
   <div class="ey" data-t="house_ey"></div>
   <div class="st" data-t="house_title"></div>
@@ -288,9 +338,18 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="gal" data-photos='["https://res.cloudinary.com/dovpg47yh/image/upload/v1776365603/e3050c6d-d585-4246-affd-0374876d612d_yobkhp.jpg"]'></div>
     <div class="ci">🚿</div><div class="ct" data-t="h_c5t"></div><div class="cb" data-t="h_c5b"></div>
   </div>
+  <!-- IG invito dopo le foto -->
+  <div class="ig-mini">
+    <div class="ig-mini-icon">📸</div>
+    <div class="ig-mini-text">
+      <strong data-t="ig_casa_title"></strong>
+      <span data-t="ig_casa_body"></span>
+    </div>
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-mini-btn">@casaadele15</a>
+  </div>
 </section>
 
-<!-- ═══ SPIAGGE ═══ -->
+<!-- SPIAGGE -->
 <section id="spiagge" class="sec">
   <div class="ey" data-t="beach_ey"></div>
   <div class="st" data-t="beach_title"></div>
@@ -301,9 +360,18 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="bc"><div class="bch"><div class="bcn">Porto Giunco</div><div class="bcd">1,7 km</div></div><div class="bcb" data-t="b_pg"></div></div>
   <div class="bc"><div class="bch"><div class="bcn">Punta Molentis</div><div class="bcd">1,7 km</div></div><div class="bcb" data-t="b_pm"></div></div>
   <div class="hl" style="margin-top:13px"><div class="hlt" data-t="b_act_t"></div><div class="hlb" data-t="b_act_b"></div></div>
+  <!-- IG invito spiaggia -->
+  <div class="ig-mini">
+    <div class="ig-mini-icon">🌊</div>
+    <div class="ig-mini-text">
+      <strong data-t="ig_beach_title"></strong>
+      <span data-t="ig_beach_body"></span>
+    </div>
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-mini-btn">Tagga!</a>
+  </div>
 </section>
 
-<!-- ═══ SERVIZI ═══ -->
+<!-- SERVIZI -->
 <section id="servizi" class="sec">
   <div class="ey" data-t="am_ey"></div>
   <div class="st" data-t="am_title"></div>
@@ -348,7 +416,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   </div>
 </section>
 
-<!-- ═══ ZONA ═══ -->
+<!-- ZONA -->
 <section id="zona" class="sec">
   <div class="ey" data-t="zona_ey"></div>
   <div class="st" data-t="zona_title"></div>
@@ -372,14 +440,11 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="pc"><div class="pe">🏪</div><div class="pi"><div class="pn">Dacla Supermercati</div><span class="pt ts" data-t="tag_supermarket"></span><div class="pd" data-t="z_dacla"></div><div class="pa">📍 Via Pascoli · Villasimius</div></div></div>
 </section>
 
-<!-- ═══ EVENTI ═══ -->
+<!-- EVENTI -->
 <section id="eventi" class="sec">
   <div class="ey" data-t="eventi_ey"></div>
   <div class="st" data-t="eventi_title"></div>
-  <div class="hl" style="margin-bottom:16px">
-    <div class="hlt" data-t="ev_live_t"></div>
-    <div class="hlb" data-t="ev_live_b"></div>
-  </div>
+  <div class="hl" style="margin-bottom:16px"><div class="hlt" data-t="ev_live_t"></div><div class="hlb" data-t="ev_live_b"></div></div>
   <div id="ai-events-container">
     <div style="text-align:center;padding:20px;color:var(--mid);font-size:13px" id="ai-events-loading" data-t="ev_loading"></div>
   </div>
@@ -391,18 +456,17 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="pc"><div class="pe">🍷</div><div class="pi"><div class="pn" data-t="ev5_t"></div><span class="pt tr" data-t="ev5_date"></span><div class="pd" data-t="ev5_b"></div></div></div>
   <div class="sub" data-t="ev_social_t"></div>
   <div style="display:flex;flex-direction:column;gap:8px">
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="cta" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;margin-bottom:0">📸 @casaadele15</a>
     <a href="https://www.facebook.com/comune.villasimius" target="_blank" class="cta" style="background:#1877f2;color:#fff;margin-bottom:0">📘 Comune di Villasimius</a>
     <a href="https://www.instagram.com/sciabecco_villasimius/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sciabecco Club</a>
     <a href="https://www.instagram.com/skybeach_sardinia/" target="_blank" class="cta" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;margin-bottom:0">📸 Sky Beach Sardinia</a>
   </div>
 </section>
 
-<!-- ═══ INFO ═══ -->
+<!-- INFO -->
 <section id="info" class="sec">
   <div class="ey" data-t="info_ey"></div>
   <div class="st" data-t="info_title"></div>
-
-  <!-- WiFi -->
   <div class="card">
     <div class="ci">📶</div>
     <div class="ct" data-t="info_wifi_t"></div>
@@ -421,8 +485,6 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
       </div>
     </div>
   </div>
-
-  <!-- Check-in / Check-out -->
   <div class="card">
     <div class="ci">🗝</div>
     <div class="ct" data-t="info_checkin_t"></div>
@@ -435,8 +497,6 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
       <div><div class="irl">Check-out</div><div class="irv" data-t="info_checkout_v"></div></div>
     </div>
   </div>
-
-  <!-- Raccolta differenziata -->
   <div class="card">
     <div class="ci">♻️</div>
     <div class="ct" data-t="info_waste_t"></div>
@@ -454,10 +514,8 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
       <div class="waste-item"><span>⚫</span><span data-t="wt_mixed"></span></div>
     </div>
     <div style="margin-top:10px;font-size:12px;font-weight:300;color:var(--mid)" data-t="info_waste_note"></div>
-    <button class="cta-sec" style="width:100%;margin-top:12px;padding:10px;border-radius:20px;font-family:Jost,sans-serif;font-size:12px;cursor:pointer" onclick="document.querySelector('[data-section=mappa]').click()">🗺 <span data-t="info_waste_map_link"></span></button>
+    <button class="cta-sec" id="btn-go-map" style="width:100%;margin-top:12px;padding:10px;border-radius:20px;font-family:Jost,sans-serif;font-size:12px;cursor:pointer">🗺 <span data-t="info_waste_map_link"></span></button>
   </div>
-
-  <!-- Contatti host -->
   <div class="card">
     <div class="ci">👥</div>
     <div class="ct" data-t="info_host_t"></div>
@@ -474,20 +532,15 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <a class="cta ctawa" href="https://wa.me/393408379789?text=Ciao+Egidio%2C+sono+un+ospite+di+Casa+Adele+🌊" target="_blank" id="wa-egidio">💬 WhatsApp Egidio</a>
 </section>
 
-<!-- ═══ MAPPA ═══ -->
+<!-- MAPPA -->
 <section id="mappa" class="sec">
   <div class="ey" data-t="map_ey"></div>
   <div class="st" data-t="map_title"></div>
-
-  <!-- Mappa interattiva Leaflet -->
   <div id="map-container" style="border-radius:var(--r);overflow:hidden;margin-bottom:14px;box-shadow:var(--sh);height:320px;background:#e8e0d8"></div>
-
-  <!-- Bottoni Google Maps -->
   <div style="display:flex;gap:8px;margin-bottom:14px">
     <a href="https://www.google.com/maps/place/Casa+Adele+Porto+Luna/@39.1326561,9.5354061,17z" target="_blank" class="cta" style="background:#4285f4;color:#fff;margin-bottom:0;flex:1;font-size:13px;padding:12px 8px">🏠 <span data-t="map_open_casa"></span></a>
     <a href="https://maps.google.com/?q=39.132137,9.534307" target="_blank" class="cta cta-sec" style="margin-bottom:0;flex:1;font-size:13px;padding:12px 8px">🗑 <span data-t="map_open_waste"></span></a>
   </div>
-
   <div class="sub" data-t="map_key_places"></div>
   <div class="card">
     <div class="ir"><div class="iric">🏠</div><div><div class="irl" data-t="map_home"></div><div class="irv">Porto Luna · Punta Molentis · <a href="https://www.google.com/maps/place/Casa+Adele+Porto+Luna/@39.1326561,9.5354061,17z" target="_blank" style="color:var(--sea);font-size:12px">Google Maps ↗</a></div></div></div>
@@ -497,7 +550,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   </div>
 </section>
 
-<!-- ═══ REGOLE ═══ -->
+<!-- REGOLE -->
 <section id="regole" class="sec">
   <div class="ey" data-t="rules_ey"></div>
   <div class="st" data-t="rules_title"></div>
@@ -513,7 +566,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="hl"><div class="hlt" data-t="r_cancel_t"></div><div class="hlb" data-t="r_cancel_b"></div></div>
 </section>
 
-<!-- ═══ CHECKOUT CHECKLIST ═══ -->
+<!-- CHECKOUT -->
 <section id="checkout" class="sec">
   <div class="ey" data-t="co_ey"></div>
   <div class="st" data-t="co_title"></div>
@@ -534,20 +587,75 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
     <div class="hlt" style="color:var(--green)" data-t="co_done_t"></div>
     <div class="hlb" style="color:#3a5a3a" data-t="co_done_b"></div>
   </div>
+  <!-- IG nel checkout: momento perfetto per ricordarlo -->
+  <div class="ig-mini" style="margin-top:4px">
+    <div class="ig-mini-icon">📸</div>
+    <div class="ig-mini-text">
+      <strong data-t="ig_checkout_title"></strong>
+      <span data-t="ig_checkout_body"></span>
+    </div>
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-mini-btn">@casaadele15</a>
+  </div>
 </section>
 
-<!-- ═══ DINTORNI ═══ -->
-<section id="dintorni" class="sec">
-  <div class="ey" data-t="around_ey"></div>
-  <div class="st" data-t="around_title"></div>
-  <div class="card"><div class="ci">🦩</div><div class="ct" data-t="ar_c1t"></div><div class="cb" data-t="ar_c1b"></div></div>
-  <div class="card"><div class="ci">⛵</div><div class="ct" data-t="ar_c2t"></div><div class="cb" data-t="ar_c2b"></div></div>
-  <div class="card"><div class="ci">🏛</div><div class="ct" data-t="ar_c3t"></div><div class="cb" data-t="ar_c3b"></div></div>
-  <div class="card"><div class="ci">🛍</div><div class="ct" data-t="ar_c4t"></div><div class="cb" data-t="ar_c4b"></div></div>
-  <div class="card"><div class="ci">🧁</div><div class="ct" data-t="ar_c5t"></div><div class="cb" data-t="ar_c5b"></div></div>
+<!-- RECENSIONI -->
+<section id="recensioni" class="sec">
+  <div class="ey" data-t="rev_ey"></div>
+  <div class="st" data-t="rev_title"></div>
+  <p class="bod" data-t="rev_intro"></p>
+  <div class="card" style="display:flex;align-items:center;gap:16px;padding:18px">
+    <div style="text-align:center;flex-shrink:0">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--terra);line-height:1">9.2</div>
+      <div style="font-size:11px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase" data-t="rev_score_label"></div>
+    </div>
+    <div style="flex:1">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--dark);margin-bottom:4px" data-t="rev_score_title"></div>
+      <div style="font-size:13px;font-weight:300;color:var(--mid)" data-t="rev_score_sub"></div>
+      <div style="color:#f4a629;font-size:18px;margin-top:6px">★★★★★</div>
+    </div>
+  </div>
+  <div class="sub" data-t="rev_sub_reviews"></div>
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev1_text"></div>
+    <div class="rev-footer"><div><div class="rev-author" data-t="rev1_author"></div><div class="rev-platform">Booking.com</div></div><div class="rev-score">9.6</div></div>
+  </div>
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev2_text"></div>
+    <div class="rev-footer"><div><div class="rev-author" data-t="rev2_author"></div><div class="rev-platform">Booking.com</div></div><div class="rev-score">9.2</div></div>
+  </div>
+  <div class="rev-card">
+    <div class="rev-stars">★★★★★</div>
+    <div class="rev-text" data-t="rev3_text"></div>
+    <div class="rev-footer"><div><div class="rev-author" data-t="rev3_author"></div><div class="rev-platform">Holidu</div></div><div class="rev-score">9.4</div></div>
+  </div>
+  <div class="rev-card">
+    <div class="rev-stars">★★★★☆</div>
+    <div class="rev-text" data-t="rev4_text"></div>
+    <div class="rev-footer"><div><div class="rev-author" data-t="rev4_author"></div><div class="rev-platform">Booking.com</div></div><div class="rev-score">8.8</div></div>
+  </div>
+
+  <!-- IG nella sezione recensioni -->
+  <div class="ig-mini">
+    <div class="ig-mini-icon">📸</div>
+    <div class="ig-mini-text">
+      <strong data-t="ig_rev_title"></strong>
+      <span data-t="ig_rev_body"></span>
+    </div>
+    <a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-mini-btn">Tagga!</a>
+  </div>
+
+  <div class="sub" data-t="rev_sub_cta"></div>
+  <p class="bod" data-t="rev_cta_intro"></p>
+  <div class="rev-cta-wrap">
+    <a href="INSERISCI_LINK_GOOGLE_BUSINESS" target="_blank" class="cta cta-google">⭐ <span data-t="rev_cta_google"></span></a>
+    <a href="https://www.booking.com/hotel/it/casa-adele-porto-luna.html" target="_blank" class="cta cta-booking">🏨 <span data-t="rev_cta_booking"></span></a>
+  </div>
+  <div class="hl" style="margin-top:6px"><div class="hlt" data-t="rev_thank_t"></div><div class="hlb" data-t="rev_thank_b"></div></div>
 </section>
 
-<!-- ═══ CONTATTI ═══ -->
+<!-- CONTATTI -->
 <section id="contatti" class="sec">
   <div class="ey" data-t="contact_ey"></div>
   <div class="st" data-t="contact_title"></div>
@@ -563,94 +671,11 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <div class="hl" style="margin-top:12px"><div class="hlt" data-t="c_sos_t"></div><div class="hlb" data-t="c_sos_b"></div></div>
 </section>
 
-<!-- ═══ RECENSIONI ═══ -->
-<section id="recensioni" class="sec">
-  <div class="ey" data-t="rev_ey"></div>
-  <div class="st" data-t="rev_title"></div>
-  <p class="bod" data-t="rev_intro"></p>
-
-  <!-- Score badge -->
-  <div class="card" style="display:flex;align-items:center;gap:16px;padding:18px">
-    <div style="text-align:center;flex-shrink:0">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--terra);line-height:1">9.2</div>
-      <div style="font-size:11px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase" data-t="rev_score_label"></div>
-    </div>
-    <div style="flex:1">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--dark);margin-bottom:4px" data-t="rev_score_title"></div>
-      <div style="font-size:13px;font-weight:300;color:var(--mid)" data-t="rev_score_sub"></div>
-      <div style="color:#f4a629;font-size:18px;margin-top:6px">★★★★★</div>
-    </div>
-  </div>
-
-  <!-- Recensioni -->
-  <div class="sub" data-t="rev_sub_reviews"></div>
-
-  <div class="rev-card">
-    <div class="rev-stars">★★★★★</div>
-    <div class="rev-text" data-t="rev1_text"></div>
-    <div class="rev-footer">
-      <div>
-        <div class="rev-author" data-t="rev1_author"></div>
-        <div class="rev-platform">Booking.com</div>
-      </div>
-      <div class="rev-score">9.6</div>
-    </div>
-  </div>
-
-  <div class="rev-card">
-    <div class="rev-stars">★★★★★</div>
-    <div class="rev-text" data-t="rev2_text"></div>
-    <div class="rev-footer">
-      <div>
-        <div class="rev-author" data-t="rev2_author"></div>
-        <div class="rev-platform">Booking.com</div>
-      </div>
-      <div class="rev-score">9.2</div>
-    </div>
-  </div>
-
-  <div class="rev-card">
-    <div class="rev-stars">★★★★★</div>
-    <div class="rev-text" data-t="rev3_text"></div>
-    <div class="rev-footer">
-      <div>
-        <div class="rev-author" data-t="rev3_author"></div>
-        <div class="rev-platform">Holidu</div>
-      </div>
-      <div class="rev-score">9.4</div>
-    </div>
-  </div>
-
-  <div class="rev-card">
-    <div class="rev-stars">★★★★☆</div>
-    <div class="rev-text" data-t="rev4_text"></div>
-    <div class="rev-footer">
-      <div>
-        <div class="rev-author" data-t="rev4_author"></div>
-        <div class="rev-platform">Booking.com</div>
-      </div>
-      <div class="rev-score">8.8</div>
-    </div>
-  </div>
-
-  <!-- CTA lascia recensione -->
-  <div class="sub" data-t="rev_sub_cta"></div>
-  <p class="bod" data-t="rev_cta_intro"></p>
-
-  <div class="rev-cta-wrap">
-    <a href="INSERISCI_LINK_GOOGLE_BUSINESS" target="_blank" class="cta cta-google">
-      ⭐ <span data-t="rev_cta_google"></span>
-    </a>
-    <a href="https://www.booking.com/hotel/it/casa-adele-porto-luna.html" target="_blank" class="cta cta-booking">
-      🏨 <span data-t="rev_cta_booking"></span>
-    </a>
-  </div>
-
-  <div class="hl" style="margin-top:6px">
-    <div class="hlt" data-t="rev_thank_t"></div>
-    <div class="hlb" data-t="rev_thank_b"></div>
-  </div>
-</section>
+<!-- PILL IG FLOTTANTE -->
+<a href="https://www.instagram.com/casaadele15/" target="_blank" class="ig-pill" id="ig-pill">
+  <span>📸</span><span data-t="ig_pill_text"></span>
+  <button class="ig-pill-x" id="ig-pill-close">×</button>
+</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="app.js"></script>
