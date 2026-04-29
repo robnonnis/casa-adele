@@ -1,6 +1,6 @@
 const T = {
 it:{
-  hero_eyebrow:"Guida ospiti · Villasimius",
+  hero_eyebrow:"Guida ospiti",
   chip_sea:"Vista mare", chip_garden:"Giardino privato", chip_guests:"4 ospiti",
   nav_welcome:"Home", nav_house:"La casa", nav_beaches:"Spiagge", nav_amenities:"Servizi",
   nav_area:"Zona", nav_events:"Eventi", nav_info:"Info", nav_map:"Mappa",
@@ -155,7 +155,7 @@ it:{
 },
 
 en:{
-  hero_eyebrow:"Guest Guide · Villasimius",
+  hero_eyebrow:"Guest Guide",
   chip_sea:"Sea view", chip_garden:"Private garden", chip_guests:"4 guests",
   nav_welcome:"Home", nav_house:"The house", nav_beaches:"Beaches", nav_amenities:"Amenities",
   nav_area:"Area", nav_events:"Events", nav_info:"Info", nav_map:"Map",
@@ -303,7 +303,7 @@ en:{
 },
 
 fr:{
-  hero_eyebrow:"Guide des hôtes · Villasimius",
+  hero_eyebrow:"Guide des hôtes",
   chip_sea:"Vue mer", chip_garden:"Jardin privé", chip_guests:"4 hôtes",
   nav_welcome:"Accueil", nav_house:"La maison", nav_beaches:"Plages", nav_amenities:"Équipements",
   nav_area:"Zone", nav_events:"Événements", nav_info:"Infos", nav_map:"Carte",
@@ -451,7 +451,7 @@ fr:{
 },
 
 de:{
-  hero_eyebrow:"Gästeführer · Villasimius",
+  hero_eyebrow:"Gästeführer",
   chip_sea:"Meerblick", chip_garden:"Privatgarten", chip_guests:"4 Gäste",
   nav_welcome:"Start", nav_house:"Das Haus", nav_beaches:"Strände", nav_amenities:"Ausstattung",
   nav_area:"Umgebung", nav_events:"Events", nav_info:"Info", nav_map:"Karte",
