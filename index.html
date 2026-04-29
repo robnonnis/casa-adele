@@ -43,7 +43,8 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 .hero-eyebrow{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:12px;position:relative;z-index:2}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,12vw,72px);font-weight:300;line-height:1;color:#fff;position:relative;z-index:2;margin-bottom:6px}
 .hero-title em{font-style:italic;color:rgba(180,230,255,.9)}
-.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(180,230,255,.75);margin-bottom:20px;position:relative;z-index:2}
+.hero-sub{font-size:13px;font-weight:300;letter-spacing:.12em;color:rgba(180,230,255,.75);margin-bottom:6px;position:relative;z-index:2}
+.hero-region{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px;position:relative;z-index:2}
 .chips{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:2;margin-bottom:0}
 .chip{background:rgba(0,180,216,.18);border:1px solid rgba(0,180,216,.4);backdrop-filter:blur(8px);color:#fff;font-size:12px;padding:6px 14px;border-radius:20px}
 
@@ -65,7 +66,7 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
 
 /* LANG TOGGLE */
 .ltog{position:absolute;top:24px;right:24px;display:flex;gap:5px;z-index:10}
-.lbtn{background:rgba(0,50,80,.35);border:1px solid rgba(0,180,216,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;padding:5px 10px;border-radius:16px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px)}
+.lbtn{background:rgba(0,50,80,.35);border:1px solid rgba(0,180,216,.4);color:#fff;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.04em;padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .2s;backdrop-filter:blur(8px)}
 .lbtn.active{background:rgba(255,255,255,.92);color:var(--dark)}
 
 /* NAV */
@@ -221,14 +222,15 @@ body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);over
   <img class="hero-bg" src="https://res.cloudinary.com/dovpg47yh/image/upload/v1776368125/IMG_9389_hkbuir.jpg" alt="Casa Adele — vista mare Porto Luna" fetchpriority="high"/>
   <div class="hero-overlay"></div>
   <div class="ltog">
-    <button class="lbtn active" data-lang="it">IT</button>
-    <button class="lbtn" data-lang="en">EN</button>
-    <button class="lbtn" data-lang="fr">FR</button>
-    <button class="lbtn" data-lang="de">DE</button>
+    <button class="lbtn active" data-lang="it">🇮🇹 IT</button>
+    <button class="lbtn" data-lang="en">🇬🇧 EN</button>
+    <button class="lbtn" data-lang="fr">🇫🇷 FR</button>
+    <button class="lbtn" data-lang="de">🇩🇪 DE</button>
   </div>
   <div class="hero-eyebrow" data-t="hero_eyebrow"></div>
   <div class="hero-title">Casa<br><em>Adele</em></div>
-  <div class="hero-sub">Porto Luna · Sardegna</div>
+  <div class="hero-sub">Porto Luna 2 · Villasimius</div>
+  <div class="hero-region">Sardegna</div>
   <div class="chips">
     <span class="chip">🌊 <span data-t="chip_sea"></span></span>
     <span class="chip">🌿 <span data-t="chip_garden"></span></span>
